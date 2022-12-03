@@ -23,7 +23,7 @@ const MyVerticallyCenteredModal = (props) => (
 	</AntModal>
 );
 
-export default function StudentDashboard() {
+export default function SavedJobs() {
 	const user_id = localStorage.getItem("user_id");
 	const [modalShow, setModalShow] = useState(false);
 	const [currentJob, setcurrentJob] = useState({});
@@ -32,34 +32,20 @@ export default function StudentDashboard() {
 	const [loading, setLoading] = useState(true);
 
 	const getAllPostings = async () => {
-		const [jobs_all, applications] = await Promise.all([
-			fetch(config.baseUrl + "/get_all_postings")
-				.then((response) => response.json())
-				.then((data) => data.data),
-			fetch(config.baseUrl + "/get_all_applications_by_student", {
+		const [jobs_all] = await Promise.all([
+			fetch(config.baseUrl + "/get_saved_jobs", {
 				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ student: user_id }),
+				headers: {
+					"Content-Type": "application/json",
+					"Access-Control-Allow-Origin": "*",
+				},
+				body: JSON.stringify({ user_id }),
 			})
 				.then((response) => response.json())
 				.then((data) => data.data),
 		]);
-
-		const jobs = [];
-		for (let i = 0; i < jobs_all.length; i++) {
-			let flag = 0;
-			for (let j = 0; j < applications.length; j++) {
-				if (jobs_all[i].posting_id === applications[j].posting_id) {
-					flag = 1;
-					break;
-				}
-			}
-			if (flag === 0) {
-				jobs.push({ ...jobs_all[i], key: jobs_all[i].posting_id });
-			}
-		}
-		setJobs_all(jobs);
-		setJobs(jobs);
+		setJobs_all(jobs_all);
+		setJobs(jobs_all);
 		setLoading(false);
 	};
 
@@ -86,24 +72,6 @@ export default function StudentDashboard() {
 				}
 			})
 			.finally(() => getAllPostings());
-	};
-
-	const saveJob = (job) => {
-		const posting_id = job.posting_id;
-		const requestOptions = {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ user_id, posting_id }),
-		};
-		fetch(config.baseUrl + "/add_saved_job", requestOptions)
-			.then((response) => response.json())
-			.then((data) => {
-				if (data.status === true) {
-					message.success("Job Saved");
-				} else {
-					message.error(data.data);
-				}
-			});
 	};
 
 	const filterByTitle = (e) => {
@@ -182,10 +150,6 @@ export default function StudentDashboard() {
 								label: <div onClick={() => apply(record)}>Apply</div>,
 								key: "apply",
 							},
-							{
-								label: <div onClick={() => saveJob(record)}>Save for Later</div>,
-								key: "Save for Later",
-							},
 							{ label: "Get shareable URL", key: "Get shareable URL" },
 						],
 					}}
@@ -204,7 +168,7 @@ export default function StudentDashboard() {
 			<Card
 				title={
 					<>
-						<Typography.Title level={4}>Search for a research role</Typography.Title>
+						<Typography.Title level={4}>Apply Now </Typography.Title>
 						<Typography style={{ fontWeight: 400, fontSize: 14 }}>
 							Enhance your skills by working as a research assistant under professors
 						</Typography>

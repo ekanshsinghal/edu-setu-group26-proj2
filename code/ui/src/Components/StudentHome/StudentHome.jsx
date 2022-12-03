@@ -11,6 +11,7 @@ import {
 import TrackApplication from "../TrackApplication/TrackApplication";
 import StudentProfile from "../StudentProfile/StudentProfile";
 import StudentDashboard from "../StudentDashboard/StudentDashboard";
+import SavedJobs from "../SavedJobs/SavedJobs";
 
 const { Content } = Layout;
 
@@ -32,6 +33,7 @@ export default function Home({ history }) {
 			case "Profile":
 				return <StudentProfile />;
 			case "Saved Jobs":
+				return <SavedJobs />;
 			default:
 				return <StudentDashboard />;
 		}
