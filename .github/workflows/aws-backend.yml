@@ -117,3 +117,7 @@ jobs:
         service: se-backend-service
         cluster: se-backend-cluster
         wait-for-service-stability: true
+
+    - name: Test with pytest
+      run: |
+        pytest tests/tests.py
