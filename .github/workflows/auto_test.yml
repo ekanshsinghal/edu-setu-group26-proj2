@@ -28,6 +28,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f code/backend/requirements.txt ]; then pip install -r code/backend/requirements.txt; fi
+        cd /code/backend/
+        curl -O https://download.oracle.com/otn_software/linux/instantclient/218000/instantclient-basiclite-linux.x64-21.8.0.0.0dbru.zip 
+        unzip instantclient-basiclite-linux.x64-21.8.0.0.0dbru.zip 
+        mv -f admin/* instantclient_21_8/network/admin/
+        export ORACLE_HOME=/usr/src/code/backend/instantclient_21_8
+        export DYLD_LIBRARY_PATH=$ORACLE_HOME
+        export LD_LIBRARY_PATH=$ORACLE_HOME
+        export PATH=$ORACLE_HOME:$PATH
+        export TNS_ADMIN=$ORACLE_HOME/network/admin
+        
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
