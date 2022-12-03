@@ -32,7 +32,7 @@ jobs:
         curl -O https://download.oracle.com/otn_software/linux/instantclient/218000/instantclient-basiclite-linux.x64-21.8.0.0.0dbru.zip 
         unzip instantclient-basiclite-linux.x64-21.8.0.0.0dbru.zip 
         mv -f admin/* instantclient_21_8/network/admin/
-        export ORACLE_HOME=/usr/src/code/backend/instantclient_21_8
+        export ORACLE_HOME=code/backend/instantclient_21_8
         export DYLD_LIBRARY_PATH=$ORACLE_HOME
         export LD_LIBRARY_PATH=$ORACLE_HOME
         export PATH=$ORACLE_HOME:$PATH
