@@ -117,10 +117,3 @@ jobs:
         service: se-backend-service
         cluster: se-backend-cluster
         wait-for-service-stability: true
-
-    - name: Test with pytest
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f code/backend/requirements.txt ]; then pip install -r code/backend/requirements.txt; fi
-        pytest tests/tests.py
