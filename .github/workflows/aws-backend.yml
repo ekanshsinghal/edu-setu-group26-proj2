@@ -120,4 +120,7 @@ jobs:
 
     - name: Test with pytest
       run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        if [ -f code/backend/requirements.txt ]; then pip install -r code/backend/requirements.txt; fi
         pytest tests/tests.py
