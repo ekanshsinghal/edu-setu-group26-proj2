@@ -128,6 +128,7 @@ export default class Login extends React.Component {
 								type='primary'
 								htmlType='submit'
 								loading={this.state.waitingForLogin}
+								id='login-submit'
 							>
 								Submit
 							</Button>
@@ -285,12 +286,17 @@ export default class Login extends React.Component {
 							</>
 						) : (
 							<>
-								<Form.Item name='department' label='Department' hasFeedback rules={[
-								{
-									required: true,
-									message: "Please input your Department!",
-								},
-							]}> 
+								<Form.Item
+									name='department'
+									label='Department'
+									hasFeedback
+									rules={[
+										{
+											required: true,
+											message: "Please input your Department!",
+										},
+									]}
+								>
 									<Input />
 								</Form.Item>
 								<Form.Item name='designation' label='Designation' hasFeedback>
