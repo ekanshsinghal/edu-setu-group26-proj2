@@ -1,5 +1,6 @@
 import student_apis
 import professor_api
+import file_manager
 import auth
 from flask import Flask, request
 from flask_cors import CORS
@@ -98,6 +99,18 @@ def get_save_job():
 @app.route("/send_email", methods=["POST"])
 def send_email():
     return professor_api.send_email(request.get_json(force=True))
+
+@app.route("/upload_profile_pic", methods=["POST"])
+def upload_profile_pic():
+    return file_manager.upload_profile_pic(request)
+
+@app.route("/upload_resume", methods=["POST"])
+def upload_resume():
+    return file_manager.upload_resume(request)
+
+@app.route("/get_resume", methods=["GET"])
+def get_resume():
+    return file_manager.get_resume(request.get_json(force=True))
 
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0',threaded=True)
