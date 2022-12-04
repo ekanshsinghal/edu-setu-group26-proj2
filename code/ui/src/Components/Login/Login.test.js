@@ -1,10 +1,7 @@
-import { render, queryByAttribute } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render } from "@testing-library/react";
 import Login from "./Login";
 
-const getById = queryByAttribute.bind(null, "id");
 test("should render Login component", async () => {
-	const user = userEvent.setup();
 	Object.defineProperty(window, "matchMedia", {
 		writable: true,
 		value: jest.fn().mockImplementation((query) => ({
@@ -18,6 +15,5 @@ test("should render Login component", async () => {
 			dispatchEvent: jest.fn(),
 		})),
 	});
-	const { baseElement } = render(<Login />);
-	await user.click(getById(baseElement, "login-submit"));
+	render(<Login />);
 });
