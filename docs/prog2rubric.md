@@ -2,7 +2,7 @@
 ## Rubric
 
 |Notes|Points|evidence|
-|-----||---------|
+|-----|----|---------|
 |Video1||
 |Bonus: Xfold improvement| In some aspect of the code; theoretical complexity, runtime, memory, developer time...||
 |Docs: what: point descriptions of each class/function (in isolation)|3|https://github.com/ekanshsinghal/edu-setu-group26-proj2/tree/main/docs|
