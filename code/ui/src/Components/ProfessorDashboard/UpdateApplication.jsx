@@ -11,14 +11,6 @@ export default class UpdateApplication extends Component {
 		});
 	};
 
-	componentDidMount() {
-		this.props.populateUpdateData();
-	}
-
-	componentDidUpdate() {
-		this.props.populateUpdateData();
-	}
-
 	render() {
 		return (
 			<Form

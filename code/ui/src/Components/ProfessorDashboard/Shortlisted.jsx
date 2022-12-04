@@ -10,7 +10,7 @@ const statusColors = {
 	IN_PROGRESS: "blue",
 	SELECTED: "success",
 	REJECTED: "red",
-	SHORTLISTED:"yellow",
+	SHORTLISTED: "yellow",
 };
 
 export default class Shortlisted extends React.Component {
@@ -50,11 +50,14 @@ export default class Shortlisted extends React.Component {
 			.then((res) => res.json())
 			.then((response) => {
 				if (response.status) {
-                    response.data.map(job => job.Applications.map(application =>{
-                        if(application.status === "shortlisted")
-                            this.setState({ data: [...this.state.data, job], filteredData: [...this.state.filteredData, job] });
-                        return null
-                    }))
+					const data = [];
+					response.data.map((job) =>
+						job.Applications.map((application) => {
+							if (application.status === "shortlisted") data.push(job);
+							return null;
+						})
+					);
+					this.setState({ data: data, filteredData: data });
 				} else {
 					message.error(response.data, 1);
 				}
