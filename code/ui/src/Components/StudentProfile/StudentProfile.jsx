@@ -1,11 +1,15 @@
 import React, { useEffect } from "react";
-import { Button, Card, Form, Input, message, Typography } from "antd";
+import { Avatar, Button, Card, Form, Input, message, Typography, Upload } from "antd";
+import { UploadOutlined, UserOutlined, DownloadOutlined } from "@ant-design/icons";
+import axios from "axios";
 
 import config from "../../config";
 
 export default function StudentProfile() {
 	const user_id = localStorage.getItem("user_id");
 	const [user_name, setuser_name] = React.useState("");
+	const [dp_url, setdp_url] = React.useState("");
+	const [resume_url, setresume_url] = React.useState("");
 	const [current_user, setcurrent_user] = React.useState({});
 	const [loading, setloading] = React.useState(true);
 
@@ -26,30 +30,68 @@ export default function StudentProfile() {
 				setuser_name(data.data.display_name);
 				setloading(false);
 			});
+		fetch(config.baseUrl + "/get_profile_pic", {
+			method: "POST",
+			body: JSON.stringify({ user_id }),
+		})
+			.then((response) => response.json())
+			.then((data) => data.file_exists && setdp_url(data.resume_url));
+		fetch(config.baseUrl + "/get_resume", {
+			method: "POST",
+			body: JSON.stringify({ user_id }),
+		})
+			.then((response) => response.json())
+			.then((data) => data.resume_url && setresume_url(data.resume_url));
 	};
 
 	const updateProfile = async (values) => {
-		console.log(values);
-		const requestOptions = {
+		await fetch(config.baseUrl + "/edit_profile", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(values),
-		};
-		const [profile, resume] = await Promise.all([
-			fetch(config.baseUrl + "/edit_profile", requestOptions)
-				.then((response) => response.json())
-				.then((data) => {
-					if (data.status === true) {
-						message.success("Profile updated succesfully!");
-					} else message.error(data.data);
-				}),
-			fetch(config.baseUrl + "/upload_resume", {
-				method: "POST",
-				body: JSON.stringify({ resume_file: values.resume, user_id }),
-			}).then((response) => response.json()),
-		]);
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				if (data.status === true) {
+					message.success("Profile updated succesfully!");
+				} else message.error(data.data);
+			});
 
 		getUserProfile();
+	};
+
+	const uploadResume = async (req) => {
+		const fmData = new FormData();
+		fmData.append("user_id", user_id);
+		fmData.append("resume_file", req.file, req.file.name);
+		try {
+			await axios.post(config.baseUrl + "/upload_resume", fmData, {
+				headers: { "content-type": "multipart/form-data" },
+				onUploadProgress: (event) => {
+					req.onProgress({ percent: (event.loaded / event.total) * 100 });
+				},
+			});
+			req.onSuccess("Ok");
+		} catch (e) {
+			req.onError({ e });
+		}
+	};
+
+	const uploadPic = async (req) => {
+		const fmData = new FormData();
+		fmData.append("user_id", user_id);
+		fmData.append("image_file", req.file, req.file.name);
+		try {
+			await axios.post(config.baseUrl + "/upload_profile_pic", fmData, {
+				headers: { "content-type": "multipart/form-data" },
+				onUploadProgress: (event) => {
+					req.onProgress({ percent: (event.loaded / event.total) * 100 });
+				},
+			});
+			req.onSuccess("Ok");
+		} catch (e) {
+			req.onError({ e });
+		}
 	};
 
 	return (
@@ -67,13 +109,19 @@ export default function StudentProfile() {
 							width: 300,
 						}}
 					>
-						<img
-							width='150px'
-							src='https://www.pngmart.com/files/21/Account-Avatar-Profile-PNG-Clipart.png'
-							alt='user'
+						<Avatar
+							src={dp_url}
+							size={150}
+							icon={<UserOutlined />}
+							style={{ marginBottom: 32 }}
 						/>
+
 						<Typography.Text strong>{user_name}</Typography.Text>
 						<Typography.Text type='secondary'>{current_user.email}</Typography.Text>
+
+						<Upload accept='.png, .jpg, .jpeg' maxCount={1} customRequest={uploadPic}>
+							<Button icon={<UploadOutlined />}>Upload Picture</Button>
+						</Upload>
 					</div>
 					<div style={{ padding: "16px 48px", flex: 1 }}>
 						<Form
@@ -112,8 +160,10 @@ export default function StudentProfile() {
 							<Form.Item label='Year' name='year'>
 								<Input />
 							</Form.Item>
-							<Form.Item label='Resume' name='resume'>
-								<Input accept='application/pdf' type='file' />
+							<Form.Item label='Resume'>
+								<Upload accept='.pdf' maxCount={1} customRequest={uploadResume}>
+									<Button icon={<UploadOutlined />}>Upload Resume</Button>
+								</Upload>
 							</Form.Item>
 							<Form.Item wrapperCol={{ offset: 3, span: 16 }}>
 								<Button
@@ -123,6 +173,15 @@ export default function StudentProfile() {
 								>
 									Submit
 								</Button>
+								{resume_url && (
+									<Button
+										type='primary'
+										icon={<DownloadOutlined />}
+										href={resume_url}
+									>
+										Download Resume
+									</Button>
+								)}
 							</Form.Item>
 						</Form>
 					</div>

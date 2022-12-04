@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670186138437" clover="3.2.0">
-  <project timestamp="1670186138437" name="All files">
-    <metrics statements="472" coveredstatements="162" conditionals="89" coveredconditionals="8" methods="208" coveredmethods="40" elements="769" coveredelements="210" complexity="0" loc="472" ncloc="472" packages="9" files="18" classes="18"/>
+<coverage generated="1670192637810" clover="3.2.0">
+  <project timestamp="1670192637810" name="All files">
+    <metrics statements="495" coveredstatements="168" conditionals="95" coveredconditionals="9" methods="215" coveredmethods="40" elements="805" coveredelements="217" complexity="0" loc="495" ncloc="495" packages="9" files="18" classes="18"/>
     <package name="src">
       <metrics statements="13" coveredstatements="2" conditionals="8" coveredconditionals="1" methods="3" coveredmethods="1"/>
       <file name="App.jsx" path="/Users/ekanshsinghal/Desktop/CSC510/edu-setu-group26-proj2/code/ui/src/App.jsx">
@@ -495,33 +495,56 @@
       </file>
     </package>
     <package name="src.Components.StudentProfile">
-      <metrics statements="24" coveredstatements="9" conditionals="2" coveredconditionals="0" methods="9" coveredmethods="3"/>
+      <metrics statements="47" coveredstatements="15" conditionals="8" coveredconditionals="1" methods="16" coveredmethods="3"/>
       <file name="StudentProfile.jsx" path="/Users/ekanshsinghal/Desktop/CSC510/edu-setu-group26-proj2/code/ui/src/Components/StudentProfile/StudentProfile.jsx">
-        <metrics statements="24" coveredstatements="9" conditionals="2" coveredconditionals="0" methods="9" coveredmethods="3"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <metrics statements="47" coveredstatements="15" conditionals="8" coveredconditionals="1" methods="16" coveredmethods="3"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="39" count="1" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
-        <line num="44" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="52" count="0" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
+        <line num="44" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="88" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
+        <line num="97" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.Components.TrackApplication">
