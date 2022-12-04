@@ -31,13 +31,10 @@ jobs:
         cd code/backend/
         curl -O https://download.oracle.com/otn_software/linux/instantclient/218000/instantclient-basiclite-linux.x64-21.8.0.0.0dbru.zip 
         unzip instantclient-basiclite-linux.x64-21.8.0.0.0dbru.zip 
-        mv -f admin/* instantclient_21_8/network/admin/
-        export ORACLE_HOME=code/backend/instantclient_21_8
-        export DYLD_LIBRARY_PATH=$ORACLE_HOME
-        export LD_LIBRARY_PATH=$ORACLE_HOME
-        export PATH=$ORACLE_HOME:$PATH
-        export TNS_ADMIN=$ORACLE_HOME/network/admin
         
+        mv -f admin/* instantclient_21_8/network/admin/
+        echo ${{ secrets.EWALLET }} > admin/ewallet.pem
+              
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -48,6 +45,12 @@ jobs:
       run: |
           echo "PYTHONPATH=code/backend" >> $GITHUB_ENV
     - name: Test with pytest
+      env:
+        ORACLE_HOME: code/backend/instantclient_21_8
+        DYLD_LIBRARY_PATH: $ORACLE_HOME
+        LD_LIBRARY_PATH: $ORACLE_HOME
+        PATH: $ORACLE_HOME:$PATH
+        TNS_ADMIN: $ORACLE_HOME/network/admin
       run: |
         pytest tests/tests.py
     - name: Setup tmate session
