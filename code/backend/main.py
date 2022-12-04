@@ -104,7 +104,7 @@ def send_email():
 def upload_profile_pic():
     return file_manager.upload_profile_pic(request)
 
-@app.route("/get_profile_pic", methods=["GET"])
+@app.route("/get_profile_pic", methods=["POST"])
 def get_profile_pic():
     return file_manager.get_profile_pic(request.get_json(force=True))
 
@@ -112,7 +112,7 @@ def get_profile_pic():
 def upload_resume():
     return file_manager.upload_resume(request)
 
-@app.route("/get_resume", methods=["GET"])
+@app.route("/get_resume", methods=["POST"])
 def get_resume():
     return file_manager.get_resume(request.get_json(force=True))
 
