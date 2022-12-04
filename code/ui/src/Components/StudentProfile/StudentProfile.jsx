@@ -1,139 +1,133 @@
-import React from "react";
-import { Component } from "react";
+import React, { useEffect } from "react";
 import { Button, Card, Form, Input, message, Typography } from "antd";
 
 import config from "../../config";
 
-export default class StudentProfile extends Component {
-	state = {
-		user_id: localStorage.getItem("user_id"),
-		user_name: "",
-		current_user: {},
-		loading: true,
-	};
+export default function StudentProfile() {
+	const user_id = localStorage.getItem("user_id");
+	const [user_name, setuser_name] = React.useState("");
+	const [current_user, setcurrent_user] = React.useState({});
+	const [loading, setloading] = React.useState(true);
 
-	componentDidMount() {
-		this.getUserProfile();
-	}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	useEffect(() => getUserProfile(), []);
 
-	getUserProfile = () => {
-		const requestOptions = {
+	const getUserProfile = () => {
+		fetch(config.baseUrl + "/get_user_profile", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ user_id: this.state.user_id }),
-		};
-		fetch(config.baseUrl + "/get_user_profile", requestOptions)
+			body: JSON.stringify({ user_id }),
+		})
 			.then((response) => response.json())
 			.then((data) => {
-				var changed_details = data.data;
-				changed_details["user_id"] = this.state.user_id;
-				this.setState({
-					current_user: changed_details,
-					user_name: data.data.display_name,
-					loading: false,
-				});
+				const changed_details = data.data;
+				changed_details["user_id"] = user_id;
+				setcurrent_user(changed_details);
+				setuser_name(data.data.display_name);
+				setloading(false);
 			});
 	};
 
-	updateValues(e) {
-		var changed_details = this.state.current_user;
-		var detail = document.getElementById(e.target.id).value;
-		changed_details[e.target.id] = detail;
-		this.setState({ current_user: changed_details });
-	}
-
-	async updateProfile() {
-		var current_user = this.state.current_user;
-		current_user["password"] = "jane.doe@gmail.com";
+	const updateProfile = async (values) => {
+		console.log(values);
 		const requestOptions = {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(current_user),
+			body: JSON.stringify(values),
 		};
-		await fetch(config.baseUrl + "/edit_profile", requestOptions)
-			.then((response) => response.json())
-			.then((data) => {
-				if (data.status === true) {
-					message.success("Profile updated succesfully!");
-				} else message.error(data.data);
-			});
+		const [profile, resume] = await Promise.all([
+			fetch(config.baseUrl + "/edit_profile", requestOptions)
+				.then((response) => response.json())
+				.then((data) => {
+					if (data.status === true) {
+						message.success("Profile updated succesfully!");
+					} else message.error(data.data);
+				}),
+			fetch(config.baseUrl + "/upload_resume", {
+				method: "POST",
+				body: JSON.stringify({ resume_file: values.resume, user_id }),
+			}).then((response) => response.json()),
+		]);
 
-		this.getUserProfile();
-	}
+		getUserProfile();
+	};
 
-	render() {
-		return (
-			<div className='StudentProfile'>
-				<Card title='Profile Settings' loading={this.state.loading}>
-					<div style={{ display: "flex" }}>
-						<div
-							style={{
-								padding: "16px 48px",
-								textAlign: "center",
-								alignItems: "center",
-								display: "flex",
-								flexDirection: "column",
-								justifyContent: "center",
-								width: 300,
+	return (
+		<div className='StudentProfile'>
+			<Card title='Profile Settings' loading={loading}>
+				<div style={{ display: "flex" }}>
+					<div
+						style={{
+							padding: "16px 48px",
+							textAlign: "center",
+							alignItems: "center",
+							display: "flex",
+							flexDirection: "column",
+							justifyContent: "center",
+							width: 300,
+						}}
+					>
+						<img
+							width='150px'
+							src='https://www.pngmart.com/files/21/Account-Avatar-Profile-PNG-Clipart.png'
+							alt='user'
+						/>
+						<Typography.Text strong>{user_name}</Typography.Text>
+						<Typography.Text type='secondary'>{current_user.email}</Typography.Text>
+					</div>
+					<div style={{ padding: "16px 48px", flex: 1 }}>
+						<Form
+							name='profile'
+							labelCol={{ span: 4 }}
+							wrapperCol={{ span: 12 }}
+							onFinish={updateProfile}
+							initialValues={{
+								display_name: current_user.display_name,
+								phone: current_user.phone,
+								degree: current_user.degree,
+								major: current_user.major,
+								minor: current_user.minor,
+								gpa: current_user.gpa,
+								year: current_user.year,
 							}}
 						>
-							<img
-								width='150px'
-								src='https://www.pngmart.com/files/21/Account-Avatar-Profile-PNG-Clipart.png'
-								alt='user'
-							/>
-							<Typography.Text strong>{this.state.user_name}</Typography.Text>
-							<Typography.Text type='secondary'>
-								{this.state.current_user.email}
-							</Typography.Text>
-						</div>
-						<div style={{ padding: "16px 48px", flex: 1 }}>
-							<Form
-								name='profile'
-								labelCol={{ span: 4 }}
-								wrapperCol={{ span: 12 }}
-								onFinish={this.updateProfile}
-								initialValues={{
-									display_name: this.state.current_user.display_name,
-									phone: this.state.current_user.phone,
-									degree: this.state.current_user.degree,
-									major: this.state.current_user.major,
-									minor: this.state.current_user.minor,
-									gpa: this.state.current_user.gpa,
-									year: this.state.current_user.year,
-								}}
-							>
-								<Form.Item label='Name' name='display_name'>
-									<Input />
-								</Form.Item>
-								<Form.Item label='Mobile Number' name='phone'>
-									<Input />
-								</Form.Item>
-								<Form.Item label='Degree' name='degree'>
-									<Input />
-								</Form.Item>
-								<Form.Item label='Major' name='major'>
-									<Input />
-								</Form.Item>
-								<Form.Item label='Minor' name='minor'>
-									<Input />
-								</Form.Item>
-								<Form.Item label='GPA' name='gpa'>
-									<Input />
-								</Form.Item>
-								<Form.Item label='Year' name='year'>
-									<Input />
-								</Form.Item>
-								<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-									<Button type='primary' htmlType='submit'>
-										Submit
-									</Button>
-								</Form.Item>
-							</Form>
-						</div>
+							<Form.Item label='Name' name='display_name'>
+								<Input />
+							</Form.Item>
+							<Form.Item label='Mobile Number' name='phone'>
+								<Input />
+							</Form.Item>
+							<Form.Item label='Degree' name='degree'>
+								<Input />
+							</Form.Item>
+							<Form.Item label='Major' name='major'>
+								<Input />
+							</Form.Item>
+							<Form.Item label='Minor' name='minor'>
+								<Input />
+							</Form.Item>
+							<Form.Item label='GPA' name='gpa'>
+								<Input />
+							</Form.Item>
+							<Form.Item label='Year' name='year'>
+								<Input />
+							</Form.Item>
+							<Form.Item label='Resume' name='resume'>
+								<Input accept='application/pdf' type='file' />
+							</Form.Item>
+							<Form.Item wrapperCol={{ offset: 3, span: 16 }}>
+								<Button
+									type='primary'
+									htmlType='submit'
+									style={{ marginRight: 32 }}
+								>
+									Submit
+								</Button>
+							</Form.Item>
+						</Form>
 					</div>
-				</Card>
-			</div>
-		);
-	}
+				</div>
+			</Card>
+		</div>
+	);
 }
