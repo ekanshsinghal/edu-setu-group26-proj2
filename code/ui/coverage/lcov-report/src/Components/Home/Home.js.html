@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">53.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>8/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>8/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -180,23 +180,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,10 +202,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -281,34 +281,34 @@ import Applications from "../ProfessorDashboard/Applications";
 import Profile from "../ProfessorDashboard/Profile";
 import Shortlisted from "../ProfessorDashboard/Shortlisted";
 &nbsp;
-const { Header, Content } = <span class="cstat-no" title="statement not covered" >Layout;</span>
+const { Header, Content } = Layout;
 &nbsp;
 export default class Home extends React.Component {
-	state = <span class="cstat-no" title="statement not covered" >{ selected_tab: "" };</span>
+	state = { selected_tab: "" };
 &nbsp;
-	onTabChange = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >this.setState({ selected_tab: e.key });</span></span>
+	onTabChange = <span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >this.setState({ selected_tab: e.key });</span>
 &nbsp;
-	onLogOut = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+	onLogOut = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >		localStorage.clear();</span>
 <span class="cstat-no" title="statement not covered" >		message.success("User Logged out successfully.", 1);</span>
 <span class="cstat-no" title="statement not covered" >		this.props.history.push("/auth");</span>
 	};
 &nbsp;
-	renderTab = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >		switch (this.state.selected_tab) {</span>
-			case "applications":
+	renderTab = () =&gt; {
+		switch (this.state.selected_tab) {
+<span class="branch-0 cbranch-no" title="branch not covered" >			case "applications":</span>
 <span class="cstat-no" title="statement not covered" >				return &lt;Applications /&gt;;</span>
-			case "profile":
+<span class="branch-1 cbranch-no" title="branch not covered" >			case "profile":</span>
 <span class="cstat-no" title="statement not covered" >				return &lt;Profile /&gt;;</span>
-			case "shortlisted":
+<span class="branch-2 cbranch-no" title="branch not covered" >			case "shortlisted":</span>
 <span class="cstat-no" title="statement not covered" >				return &lt;Shortlisted /&gt;;	</span>
 			default:
-<span class="cstat-no" title="statement not covered" >				return &lt;Postings /&gt;;</span>
+				return &lt;Postings /&gt;;
 		}
 	};
 &nbsp;
-<span class="fstat-no" title="function not covered" >	re</span>nder() {
-<span class="cstat-no" title="statement not covered" >		return (</span>
+	render() {
+		return (
 			&lt;Layout style={{ height: "100vh" }}&gt;
 				&lt;Header
 					style={{
@@ -373,7 +373,7 @@ export default class Home extends React.Component {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-04T18:47:46.677Z
+                at 2022-12-04T18:48:52.482Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">46.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>7/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">46.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>7/15</span>
             </div>
         
             
@@ -170,21 +170,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -194,9 +192,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -262,33 +262,33 @@ import StudentProfile from "../StudentProfile/StudentProfile";
 import StudentDashboard from "../StudentDashboard/StudentDashboard";
 import SavedJobs from "../SavedJobs/SavedJobs";
 &nbsp;
-const { Content } = <span class="cstat-no" title="statement not covered" >Layout;</span>
+const { Content } = Layout;
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >Home(</span>{ history }) {
-	const [selected_tab, setSelectedTab] = <span class="cstat-no" title="statement not covered" >useState("");</span>
+export default function Home({ history }) {
+	const [selected_tab, setSelectedTab] = useState("");
 &nbsp;
-	const handleLogout = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+	const handleLogout = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
 <span class="cstat-no" title="statement not covered" >		localStorage.clear();</span>
 <span class="cstat-no" title="statement not covered" >		message.success("User Logged out successfully.", 1);</span>
 <span class="cstat-no" title="statement not covered" >		history.push("/auth");</span>
 	};
 &nbsp;
-	const renderTab = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >		switch (selected_tab) {</span>
-			case "Home":
+	const renderTab = () =&gt; {
+		switch (selected_tab) {
+<span class="branch-0 cbranch-no" title="branch not covered" >			case "Home":</span>
 <span class="cstat-no" title="statement not covered" >				return &lt;StudentDashboard /&gt;;</span>
-			case "Applications":
+<span class="branch-1 cbranch-no" title="branch not covered" >			case "Applications":</span>
 <span class="cstat-no" title="statement not covered" >				return &lt;TrackApplication /&gt;;</span>
-			case "Profile":
+<span class="branch-2 cbranch-no" title="branch not covered" >			case "Profile":</span>
 <span class="cstat-no" title="statement not covered" >				return &lt;StudentProfile /&gt;;</span>
-			case "Saved Jobs":
+<span class="branch-3 cbranch-no" title="branch not covered" >			case "Saved Jobs":</span>
 <span class="cstat-no" title="statement not covered" >				return &lt;SavedJobs /&gt;;</span>
 			default:
-<span class="cstat-no" title="statement not covered" >				return &lt;StudentDashboard /&gt;;</span>
+				return &lt;StudentDashboard /&gt;;
 		}
 	};
 &nbsp;
-<span class="cstat-no" title="statement not covered" >	return (</span>
+	return (
 		&lt;Layout style={{ minHeight: "100vh" }}&gt;
 			&lt;Layout.Header
 				style={{
@@ -346,7 +346,7 @@ export default function <span class="fstat-no" title="function not covered" >Hom
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-12-04T18:47:46.677Z
+                at 2022-12-04T18:48:52.482Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
