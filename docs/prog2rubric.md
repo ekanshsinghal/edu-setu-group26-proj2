@@ -10,7 +10,7 @@
 |Use of code formatters. |3|Prettier code formatter used|
 |Use of syntax checkers. |3|pylint, eslint used to check the code syntax|
 |Use of code coverage |||
-|Other automated analysis tools|||
+|Other automated analysis tools|3|https://github.com/ekanshsinghal/edu-setu-group26-proj2/actions|
 |Workload is spread over the whole team (one team member is often Xtimes more productive than the others but nevertheless, here is a track record that everyone is contributing a lot)|3|https://github.com/ekanshsinghal/edu-setu-group26-proj2/graphs/contributors|
 |Number of commits|3|https://github.com/ekanshsinghal/edu-setu-group26-proj2/graphs/commit-activity|
 |Number of commits: by different people|3|https://github.com/ekanshsinghal/edu-setu-group26-proj2/graphs/contributors|
