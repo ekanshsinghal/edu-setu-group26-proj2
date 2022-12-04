@@ -54,6 +54,6 @@ jobs:
       run: |
         export LD_LIBRARY_PATH=code/backend/instantclient_21_8
         pytest tests/tests.py
-    - name: Setup tmate session
-      if: success() || failure()
-      uses: mxschmitt/action-tmate@v3
+#     - name: Setup tmate session
+#       if: success() || failure()
+#       uses: mxschmitt/action-tmate@v3
