@@ -104,6 +104,10 @@ def send_email():
 def upload_profile_pic():
     return file_manager.upload_profile_pic(request)
 
+@app.route("/get_profile_pic", methods=["GET"])
+def get_profile_pic():
+    return file_manager.get_profile_pic(request.get_json(force=True))
+
 @app.route("/upload_resume", methods=["POST"])
 def upload_resume():
     return file_manager.upload_resume(request)
