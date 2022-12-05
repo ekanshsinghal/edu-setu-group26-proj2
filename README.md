@@ -69,18 +69,7 @@ And, as you might have guessed, students can come in to apply and connect with t
 Like any web application, this project consists of 3 major components. Frontend, Backend and Database.
 We have already deployed the backend on Oracle Cloud Infrastructure. So, that includes the _complicated_ Database configuration setup. All you need to do to start using this project is to setup the User Interface. Unfortunately, we couldn't deploy the frontend on the server because of memory limitations on the free-tier account. So, we have the next-best thing in place! Yes, using DOCKER, which means you don't even have to clone the git repo!
 
-Follow the below steps to get started:
 
-1. [Install docker](https://docs.docker.com/get-docker/), if it's not already installed in your system!
-2. Start Docker Desktop and run the container using the below command - Yes, just one command...
-
-```
-docker run -it -d -p 3000:3000 jayrajmulani/edusetu_ui
-```
-
-3. Navigate to [localhost:3000](http://localhost:3000) to your browser.
-4. Hit register to create your account
-5. Login to begin bridging opportunities!
 
 ---
 
@@ -88,20 +77,20 @@ docker run -it -d -p 3000:3000 jayrajmulani/edusetu_ui
 
 <br/>
 
-### Development Specifications
 
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+### Development Stack
+![Screen Shot 2022-12-05 at 6 27 23 PM](https://user-images.githubusercontent.com/30636208/205766015-6279b9ef-239b-4aa0-b7d4-15500d17c361.png)
 
-![ReactJS](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-
-![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-
-![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=Oracle&logoColor=white)
 
 The portal is developed with the above mentioned tech-stack. Detailed documentation for each component can be found as below:
 
 1. [Backend](./code/backend/README.md)
 2. [Frontend](./code/ui/README.md)
+
+### Deployment Stack
+![Screen Shot 2022-12-05 at 6 28 15 PM](https://user-images.githubusercontent.com/30636208/205766386-35aaa0d0-25b2-4e7a-b55c-043ae10c40d4.png)
+
+
 
 ## License
 
