@@ -512,8 +512,8 @@ def send_email(data):
         else:
             message = "Unfortunately, you have not been selected for " + str(posting_id) + ". Thank you!"
 
-        email_address = ${{ secrets.SMTP_EMAIL }}
-        email_password = ${{ secrets.SMTP_PASSWORD }}
+	email_address = os.environ["SMTP_EMAIL"]
+        email_password = os.environ["SMTP_PASSWORD"]
 
         # create email
         msg = EmailMessage()
