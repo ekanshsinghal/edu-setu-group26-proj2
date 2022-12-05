@@ -49,16 +49,17 @@ export class TrackApplication extends Component {
 	};
 
 	async withdrawApplication(application) {
-		const requestOptions2 = {
+		await fetch(config.baseUrl + "/update_application", {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
 				application_id: application.application_id,
 				status: "Withdrawn",
 				remarks: application.remarks,
+				student_email: application.student_email,
+				professor_email: application.professor_email,
 			}),
-		};
-		await fetch(config.baseUrl + "/update_application", requestOptions2)
+		})
 			.then((response) => response.json())
 			.then((data) => {
 				if (data.status === true) {

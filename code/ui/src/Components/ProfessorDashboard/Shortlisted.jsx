@@ -73,33 +73,6 @@ export default class Shortlisted extends React.Component {
 	onUpdateApplication = (record) =>
 		this.setState({ updateApplicantData: record, updateVisible: true });
 
-	submitUpdateApplication = (finalValues) => {
-		this.setState({ loadingUpdateApplication: true });
-		let url = `${config.baseUrl}/update_application`;
-		fetch(url, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Access-Control-Allow-Origin": "*",
-			},
-			body: JSON.stringify(finalValues),
-		})
-			.then((res) => res.json())
-			.then((response) => {
-				if (response.status) {
-					this.setState({ updateVisible: false });
-					message.success(response.data);
-					this.fetchApplications();
-					this.onClose();
-				} else {
-					message.error(response.data, 3);
-					this.updateFormRef.current?.resetFields();
-				}
-				this.setState({ loadingUpdateApplication: false });
-			})
-			.catch((err) => console.log(err));
-	};
-
 	render() {
 		return (
 			<Card
