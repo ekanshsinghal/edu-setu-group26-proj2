@@ -24,6 +24,11 @@
 
 ---
 
+## Link to Edu Setu website
+The website is hosted online in AWS and can be accessed by clicking this [link](http://aws-ecs-demo-load-balancer-1697820439.us-east-1.elb.amazonaws.com/).
+
+---
+
 ## Table of Contents
 
 -   [About](#about)
