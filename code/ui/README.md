@@ -8,6 +8,7 @@
 . 
 ├── package-lock.json
 ├── package.json
+├── coverage
 ├── public
 │   ├── assets
 │   │   └── images
@@ -19,39 +20,41 @@
 │   └── robots.txt
 └── src
     ├── App.css
-    ├── App.js
+    ├── App.jsx
     ├── App.test.js
     ├── Components
     │   ├── Home
     │   │   ├── Home.css
     │   │   ├── Home.js
-    │   │   └── NotFound.js
+    │   │   └── Home.test.js
     │   ├── Login
     │   │   ├── Login.css
-    │   │   └── Login.js
+    │   │   └── Login.jsx
+    │   │   └── Login.test.js
     │   ├── ProfessorDashboard
-    │   │   ├── AddNewPosting.js
-    │   │   ├── Applications.js
-    │   │   ├── Postings.js
-    │   │   ├── Profile.js
-    │   │   ├── UpdateApplication.js
-    │   │   └── UpdatePosting.js
-    │   ├── __tests__
-    │   └── studentdashboard
-    │       ├── applications.json
-    │       ├── index.jsx
-    │       ├── jobs.json
-    │       ├── navbar
-    │       │   ├── index.css
-    │       │   └── index.jsx
-    │       ├── savedapplication.jsx
-    │       ├── studentDashboard.css
-    │       ├── studentProfile.css
-    │       ├── studentProfile.jsx
-    │       ├── studentdashboard.jsx
-    │       ├── trackapplication.jsx
-    │       └── user.json
-    ├── Redirections.js
+    │   │   ├── AddNewPosting.jsx
+    │   │   ├── Applications.jsx
+    │   │   ├── Postings.jsx
+    │   │   ├── ProfessorDashboard.test.js
+    │   │   ├── Profile.jsx
+    │   │   ├── Shortlisted.jsx
+    │   │   ├── UpdateApplication.jsx
+    │   │   └── UpdatePosting.jsx
+    │   ├── SavedJobs
+    │   │   ├── SavedJobs.jsx
+    │   │   └── SavedJobs.test.js
+    │   ├── StudentDashboard
+    │   │   ├── StudentDashboard.jsx
+    │   │   └── StudentDashboard.test.js
+    │   ├── StudentHome
+    │   │   ├── StudentHome.jsx
+    │   │   └── StudentHome.test.js
+    │   ├── StudentProfile
+    │   │   ├── StudentProfile.jsx
+    │   │   └── StudentProfile.test.js
+    │   └── TrackApplication
+    │       ├── TrackApplication.jsx
+    │       └── TrackApplication.test.js
     ├── assets
     │   └── logo.png
     ├── config.js
