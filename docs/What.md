@@ -43,16 +43,16 @@ Depending on the type selected appropriate options are displayed.
 <ul>
 <li>getAllPostings()- get all the open requisitions</li>
 <li>apply()- apply to a particular job</li>
-<li>saveJob – save the job for review </li>
-<li>filterByTitle – filter the jobs by various header like professor, department, location </li>
+<li>saveJob() – save the job for review </li>
+<li>filterByTitle() – filter the jobs by various header like professor, department, location </li>
 </ul>
 5.	 Student Profile: This contains all the information related to the student profile. Here the student can view/update their information
 <ul>
-<li>getUserProfile  - fetch all user profile data from the DB</li>
+<li>getUserProfile()  - fetch all user profile data from the DB</li>
  <li>updateProfile() – update user profile data.</li>
  </ul>
 6.	TrackApplication: Here the Students can track the status of their application. They can view the jobs that they have applied to and withdraw an application.
 <ul> 
- <li>getAllApplications – Get all the applications of the logged in user</li>
-<li>withdrawApplication – Withdraw an application.</li>
+ <li>getAllApplications() – Get all the applications of the logged in user</li>
+<li>withdrawApplication() – Withdraw an application.</li>
 </ul>
