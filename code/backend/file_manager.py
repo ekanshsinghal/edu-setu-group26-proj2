@@ -3,8 +3,10 @@
 import oci
 import os
 
-config = oci.config.from_file(".oci/config","ADMIN_USER")
-object_storage_client = oci.object_storage.ObjectStorageClient(config)
+def setup_oci():
+    config = oci.config.from_file(".oci/config","ADMIN_USER")
+    object_storage_client = oci.object_storage.ObjectStorageClient(config)
+    return object_storage_client
 
 def get_profile_pic(data):
 
@@ -31,6 +33,7 @@ def get_profile_pic(data):
     }
     ```
     '''
+    object_storage_client = setup_oci()
     try:
         user = data["user_id"]
         extensions = [".jpg", ".jpeg", ".png"]
@@ -67,6 +70,8 @@ def upload_profile_pic(request):
     }
     ```
     '''
+    object_storage_client = setup_oci()
+
     try:
         image_data = request.files['image_file']
         user = request.form.get("user_id")
@@ -115,6 +120,8 @@ def get_resume(data):
     }
     ```
     '''
+    object_storage_client = setup_oci()
+
     try:
         user = data["user_id"]
         resume_name = str(user)+"_resume.pdf"
@@ -148,6 +155,8 @@ def upload_resume(request):
     }
     ```
     '''
+    object_storage_client = setup_oci()
+
     try:
         resume_data = request.files['resume_file']
         user = request.form.get("user_id")
