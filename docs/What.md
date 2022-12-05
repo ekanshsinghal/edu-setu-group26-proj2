@@ -12,7 +12,7 @@ onRegister: This method is used to call the register API to save the details in 
 onLogin(): This method is used to verify the user and log the user into the application. The method also saves user information like email, Name, user id, type so it can be used by other classes.
 
 2.	Professor Dashboard: This contains several functionalities specific to professor 
- Markup : * AddNewPosting.js: This is used to create a new job posting. Once the user logs in as professor, he can create a new job posting to which the students can apply. This class is used to render the UI for creating a new job posting
+ * AddNewPosting.js: This is used to create a new job posting. Once the user logs in as professor, he can create a new job posting to which the students can apply. This class is used to render the UI for creating a new job posting
 * Applications.js: This class contains the methods to view, update candidate applications.
  * fetchApplications() – Used to get all the applications by user id
  ..*	submitUpdateApplication()- called on clicking the submit button. Used to update the application
