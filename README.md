@@ -91,16 +91,17 @@ npm start
 5. Login to begin bridging opportunities!
 
 ---
-
-## Documentation
-
+## Tech Stack
 
 ### Development Stack
 ![Screen Shot 2022-12-05 at 6 27 23 PM](https://user-images.githubusercontent.com/30636208/205766015-6279b9ef-239b-4aa0-b7d4-15500d17c361.png)
 
-
 ### Deployment Stack
 ![Screen Shot 2022-12-05 at 6 28 15 PM](https://user-images.githubusercontent.com/30636208/205766386-35aaa0d0-25b2-4e7a-b55c-043ae10c40d4.png)
+
+---
+
+## Documentation
 
 The portal is developed with the above mentioned tech-stack. Detailed documentation for each component can be found as below:
 
