@@ -143,7 +143,7 @@ Further details regarding the license can be found [here](https://github.com/jay
 </p>
 
 ---
-## Discord channel link - [Click to join](https://discord.gg/HPFQ3Qak))
+## Discord channel link - [Click to join](https://discord.gg/HPFQ3Qak)
 
 
 ## Contributors
