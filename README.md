@@ -6,27 +6,36 @@
 
 ## Discord channel link - [![Discord](https://img.shields.io/discord/1010335378831585310)](https://discord.gg/ANGKkKvmWH)
 
-[![License](https://img.shields.io/github/license/jayrajmulani/group1-se-homeworks)](https://github.com/jayrajmulani/group2-se-homeworks/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/ekanshsinghal/edu-setu-group26-proj2)](https://github.com/ekanshsinghal/edu-setu-group26-proj2/blob/main/LICENSE)
+![GitHub](https://img.shields.io/badge/Language-JavaScript-blue.svg)
+![npm](https://img.shields.io/badge/npm-v8.9.0-green.svg)
+![Node](https://img.shields.io/badge/node-v16.15.1-green.svg)
+![Python](https://img.shields.io/badge/python-v3.9-green.svg)
+
+![Open issues](https://img.shields.io/github/issues-raw/ekanshsinghal/edu-setu-group26-proj2)
+![Closed issues](https://img.shields.io/github/issues-closed-raw/ekanshsinghal/edu-setu-group26-proj2?color=bright-green)
 ![Repo size](https://img.shields.io/github/repo-size/ekanshsinghal/edu-setu-group26-proj2)
-![Lines of code](https://img.shields.io/tokei/lines/github.com/ekanshsinghal/edu-setu-group26-proj2)
 [![DOI](https://zenodo.org/badge/527647386.svg)](https://zenodo.org/badge/latestdoi/527647386)
+[![frontend-build](https://github.com/ekanshsinghal/edu-setu-group26-proj2/actions/workflows/build_test_react.yml/badge.svg?branch=main)](https://github.com/ekanshsinghal/edu-setu-group26-proj2/actions/workflows/build_test_react.yml)
 [![Travis](https://app.travis-ci.com/jayrajmulani/group1-se-homeworks.svg?branch=main)](https://app.travis-ci.com/github/jayrajmulani/group1-se-homeworks/pull_requests)
-[![Contributors](https://img.shields.io/github/contributors/jayrajmulani/edu-setu)](https://github.com/jayrajmulani/edu-setu/graphs/contributors)
+[![Contributors](https://img.shields.io/github/contributors/ekanshsinghal/edu-setu-group26-proj2)](https://github.com/ekanshsinghal/edu-setu-group26-proj2/graphs/contributors)
 [![Deploy to Amazon ECS](https://github.com/ekanshsinghal/edu-setu-group26-proj2/actions/workflows/aws.yml/badge.svg)](https://github.com/ekanshsinghal/edu-setu-group26-proj2/actions/workflows/aws.yml)
+[![codecov](https://codecov.io/github/ekanshsinghal/se-group26-proj1/branch/main/graph/badge.svg?token=fHCWUMUXXr)](https://codecov.io/github/ekanshsinghal/se-group26-proj1)
+
 ---
 
 ## Table of Contents
 
-- [About](#about)
-- [Getting started](#getting-started)
-- [Documentation](#documentation)
-- [Development Specifications](#development-specifications)
-  - [Backend](./code/backend/README.md)
-  - [Frontend](./code/ui/README.md)
-- [Features Overview](https://www.youtube.com/watch?v=2PfVqtwufgw)
-- [License](#license)
-- [Future Scope](#future-scope)
-- [Contributors](#contributors)
+-   [About](#about)
+-   [Getting started](#getting-started)
+-   [Documentation](#documentation)
+-   [Development Specifications](#development-specifications)
+    -   [Backend](./code/backend/README.md)
+    -   [Frontend](./code/ui/README.md)
+-   [Features Overview](https://www.youtube.com/watch?v=2PfVqtwufgw)
+-   [License](#license)
+-   [Future Scope](#future-scope)
+-   [Contributors](#contributors)
 
 ---
 
@@ -46,10 +55,10 @@ Our project, Edu-Setu, as the name suggests, is a portal that bridges opportunit
 
 You might be wondering "what" opportunities exactly? Well, the one that every studnet desires to have and every professor usually need to offer! Yes, Edu-Setu facilitates professors to post opportunities for students which may include, but not liimited to:
 
-- Research Opportunities
-- Part time roles (On Campus)
-- Project Opportunities
-- Volunteering Opportunities
+-   Research Opportunities
+-   Part time roles (On Campus)
+-   Project Opportunities
+-   Volunteering Opportunities
 
 And, as you might have guessed, students can come in to apply and connect with the professors via this portal. Edu-Setu keeps the track of all the postings and applications, removing the hassle of "emailing" the professor and waiting for the opportunities to get buried.
 
@@ -102,14 +111,14 @@ Further details regarding the license can be found [here](https://github.com/jay
 
 ## Future scope
 
-- Provide push notifications to students when there is an update to their current application status and to professors when a student applies for a job posting.
-- Provide interview zoom schedule links right from the portal to the applicants if selected for an interview, also provide a button to students to show if they can attend the meeting on the provided scheduled date or would like to request another date.
-- Include a referral feature that will allow hired candidates to provide a referral to other suitable students for other positions available under the professor they work for.
-- Provide a page to assign weekly shifts for hired students as per their available timeframe.
-- Scale up the project by using cloud storage to store other important features like resumes, cover letters, and internship certificates of students so the professor can make a better decision on who to shortlist for interview.
-- Validate whether an email is an Edu mail (can also validate it for specific college edu mail as only students from that college should be allowed to apply for college specific positions) or not, also provide an OTP mechanism so that only authentic users can register.
-- Provide a feature so that students or professors who have worked together on a project can endorse each other's skills (Like Linkedin).
-- Once logged in maintain the status as logged in for a particular device until the user signs out to provide more convenience to the user.
+-   Provide push notifications to students when there is an update to their current application status and to professors when a student applies for a job posting.
+-   Provide interview zoom schedule links right from the portal to the applicants if selected for an interview, also provide a button to students to show if they can attend the meeting on the provided scheduled date or would like to request another date.
+-   Include a referral feature that will allow hired candidates to provide a referral to other suitable students for other positions available under the professor they work for.
+-   Provide a page to assign weekly shifts for hired students as per their available timeframe.
+-   Scale up the project by using cloud storage to store other important features like resumes, cover letters, and internship certificates of students so the professor can make a better decision on who to shortlist for interview.
+-   Validate whether an email is an Edu mail (can also validate it for specific college edu mail as only students from that college should be allowed to apply for college specific positions) or not, also provide an OTP mechanism so that only authentic users can register.
+-   Provide a feature so that students or professors who have worked together on a project can endorse each other's skills (Like Linkedin).
+-   Once logged in maintain the status as logged in for a particular device until the user signs out to provide more convenience to the user.
 
 <a href="https://app.animaker.com/animo/xJq8qgUlHE0MX9wp/"><h2>Why FORK our project</h2></a>
 
@@ -119,8 +128,8 @@ Further details regarding the license can be found [here](https://github.com/jay
 
 ## Contributors
 
-- [Jayraj Mulani](https://github.com/jayrajmulani)
-- [Yashasya Shah](https://github.com/Yashasya)
-- [Harshil Sanghvi](https://github.com/Harshil47)
-- [Dhrumil Shah](https://github.com/Dhrumil0310)
-- [Anisha Chazhoor](https://github.com/anishasc99)
+-   [Jayraj Mulani](https://github.com/jayrajmulani)
+-   [Yashasya Shah](https://github.com/Yashasya)
+-   [Harshil Sanghvi](https://github.com/Harshil47)
+-   [Dhrumil Shah](https://github.com/Dhrumil0310)
+-   [Anisha Chazhoor](https://github.com/anishasc99)
