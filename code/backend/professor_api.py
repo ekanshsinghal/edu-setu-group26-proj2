@@ -481,11 +481,12 @@ def send_email(data):
     ```
     Request:
     {
-        to: string (student email address), 
-        professor_name: string (professor name),
-        subject: string (email subject),
-        message: string (email content),
-        posting_id: number (job posting id)
+        application_id: number,
+        professor_email: string (professor email),
+        remarks: null,
+        status: string,
+        student_email: string (student email address)
+
     }
     Response:
     {
@@ -497,23 +498,20 @@ def send_email(data):
     
     try:
         # Get the data from JSON Payload
-        to = data["to"]
-        posting_id = data["posting_id"]
-        if "professor_name" in data:
-            professor_name = data["professor_name"]
+        to = data["student_email"]
+        application_id = data["application_id"]
+        if "professor_email" in data:
+            professor_email = data["professor_email"]
         else:
-            professor_name = "Professor"
-        if "subject" in data:
-            subject = data["subject"]
+            professor_email = "Professor"
+        subject = "Your application status has been updated"
+        if "status" in data:
+            message = "From " + professor_email + "\n\n" + data["status"] + "\nPosting ID: " + str(application_id)
         else:
-            subject = "Your application status has been updated"
-        if "message" in data:
-            message = "From " + professor_name + "\n\n" + data["message"] + "\nPosting ID: " + str(posting_id)
-        else:
-            message = "Unfortunately, you have not been selected for " + str(posting_id) + ". Thank you!"
+            message = "Unfortunately, you have not been selected for " + str(application_id) + ". Thank you!"
 
-        email_address = os.environ["SMTP_EMAIL"]
-        email_password = os.environ["SMTP_PASSWORD"]
+        email_address = "2017it0638@svce.ac.in"
+        email_password = "8778109200"
 
         # create email
         msg = EmailMessage()
