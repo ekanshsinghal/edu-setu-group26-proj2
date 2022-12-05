@@ -113,6 +113,18 @@ The portal is developed with the above mentioned tech-stack. Detailed documentat
 1. [Backend](./code/backend/README.md)
 2. [Frontend](./code/ui/README.md)
 
+### CI/CD Pipeline
+![Screen Shot 2022-12-05 at 6 28 15 PM](https://user-images.githubusercontent.com/30636208/205767992-09886ff3-e83c-4fbd-a2a1-5e506000fafa.png)
+
+### Architecture
+![Screen Shot 2022-12-05 at 6 37 05 PM](https://user-images.githubusercontent.com/30636208/205768119-c0776614-4319-4a15-9e98-10182211fab4.png)
+
+### Scalability
+![Screen Shot 2022-12-05 at 6 37 21 PM](https://user-images.githubusercontent.com/30636208/205768148-64120acc-3541-47ce-8f8d-eb24ae646867.png)
+
+
+---
+
 ## License
 
 This project is licensed under [MIT](https://mit-license.org/).
