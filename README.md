@@ -69,28 +69,44 @@ And, as you might have guessed, students can come in to apply and connect with t
 Like any web application, this project consists of 3 major components. Frontend, Backend and Database.
 We have already deployed the backend on Oracle Cloud Infrastructure. So, that includes the _complicated_ Database configuration setup. All you need to do to start using this project is to setup the User Interface. Unfortunately, we couldn't deploy the frontend on the server because of memory limitations on the free-tier account. So, we have the next-best thing in place! Yes, using DOCKER, which means you don't even have to clone the git repo!
 
+---
 
+## Installation
+
+Follow the below steps for installation and local development:
+
+1. [Install docker](https://docs.docker.com/get-docker/), if it's not already installed in your system!
+2. Start Docker Desktop and run the container using the below command - Yes, just one command...
+3. For backend, go to `/code/backend` and run
+```
+docker build -t backend .
+docker run -p 5000:5000 backend
+```
+4. For frontend, open another terminal, go to `/code/ui` and run
+```
+npm install
+npm start
+```
+3. Navigate to [localhost:3000](http://localhost:3000) to your browser.
+4. Hit register to create your account
+5. Login to begin bridging opportunities!
 
 ---
 
 ## Documentation
-
-<br/>
 
 
 ### Development Stack
 ![Screen Shot 2022-12-05 at 6 27 23 PM](https://user-images.githubusercontent.com/30636208/205766015-6279b9ef-239b-4aa0-b7d4-15500d17c361.png)
 
 
+### Deployment Stack
+![Screen Shot 2022-12-05 at 6 28 15 PM](https://user-images.githubusercontent.com/30636208/205766386-35aaa0d0-25b2-4e7a-b55c-043ae10c40d4.png)
+
 The portal is developed with the above mentioned tech-stack. Detailed documentation for each component can be found as below:
 
 1. [Backend](./code/backend/README.md)
 2. [Frontend](./code/ui/README.md)
-
-### Deployment Stack
-![Screen Shot 2022-12-05 at 6 28 15 PM](https://user-images.githubusercontent.com/30636208/205766386-35aaa0d0-25b2-4e7a-b55c-043ae10c40d4.png)
-
-
 
 ## License
 
