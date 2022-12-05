@@ -30,7 +30,7 @@ ENV LD_LIBRARY_PATH=$ORACLE_HOME
 ENV PATH=$ORACLE_HOME:$PATH
 ENV TNS_ADMIN=$ORACLE_HOME/network/admin
 
-ENTRYPOINT [ "flask" ]
-CMD [ "run" , "--host=0.0.0.0" ,"--port=5000"]
+# ENTRYPOINT [ "flask" ]
+# CMD [ "run" , "--host=0.0.0.0" ,"--port=5000"]
 
-# CMD ["gunicorn", "-b", "0.0.0.0:5000", "--workers=10"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "--workers=10", "--worker-class=gthread", "--threads=5", "wsgi:app"]

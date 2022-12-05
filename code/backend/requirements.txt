@@ -5,3 +5,4 @@ Flask==2.0.3
 Flask-Cors==3.0.10
 RUST==0.1.1
 oci
+gunicorn
