@@ -73,14 +73,6 @@ export default class Shortlisted extends React.Component {
 	onUpdateApplication = (record) =>
 		this.setState({ updateApplicantData: record, updateVisible: true });
 
-	populateUpdateData = () => {
-		if (
-			this.updateFormRef.current.getFieldsValue().application_id !==
-			this.state.updateApplicantData.application_id
-		)
-			this.updateFormRef.current.setFieldsValue(this.state.updateApplicantData);
-	};
-
 	submitUpdateApplication = (finalValues) => {
 		this.setState({ loadingUpdateApplication: true });
 		let url = `${config.baseUrl}/update_application`;

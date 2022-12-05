@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1670192637810" clover="3.2.0">
-  <project timestamp="1670192637810" name="All files">
-    <metrics statements="495" coveredstatements="168" conditionals="95" coveredconditionals="9" methods="215" coveredmethods="40" elements="805" coveredelements="217" complexity="0" loc="495" ncloc="495" packages="9" files="18" classes="18"/>
+<coverage generated="1670199271411" clover="3.2.0">
+  <project timestamp="1670199271411" name="All files">
+    <metrics statements="490" coveredstatements="166" conditionals="91" coveredconditionals="9" methods="216" coveredmethods="40" elements="797" coveredelements="215" complexity="0" loc="490" ncloc="490" packages="9" files="18" classes="18"/>
     <package name="src">
       <metrics statements="13" coveredstatements="2" conditionals="8" coveredconditionals="1" methods="3" coveredmethods="1"/>
       <file name="App.jsx" path="/Users/ekanshsinghal/Desktop/CSC510/edu-setu-group26-proj2/code/ui/src/App.jsx">
@@ -105,7 +105,7 @@
       </file>
     </package>
     <package name="src.Components.ProfessorDashboard">
-      <metrics statements="215" coveredstatements="69" conditionals="32" coveredconditionals="1" methods="105" coveredmethods="15"/>
+      <metrics statements="210" coveredstatements="67" conditionals="28" coveredconditionals="1" methods="106" coveredmethods="15"/>
       <file name="AddNewPosting.jsx" path="/Users/ekanshsinghal/Desktop/CSC510/edu-setu-group26-proj2/code/ui/src/Components/ProfessorDashboard/AddNewPosting.jsx">
         <metrics statements="7" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
         <line num="4" count="3" type="stmt"/>
@@ -117,52 +117,50 @@
         <line num="97" count="0" type="stmt"/>
       </file>
       <file name="Applications.jsx" path="/Users/ekanshsinghal/Desktop/CSC510/edu-setu-group26-proj2/code/ui/src/Components/ProfessorDashboard/Applications.jsx">
-        <metrics statements="45" coveredstatements="16" conditionals="6" coveredconditionals="0" methods="23" coveredmethods="3"/>
-        <line num="8" count="3" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
+        <metrics statements="43" coveredstatements="15" conditionals="4" coveredconditionals="0" methods="25" coveredmethods="3"/>
+        <line num="9" count="3" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
-        <line num="38" count="1" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
-        <line num="50" count="0" type="stmt"/>
-        <line num="52" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
+        <line num="55" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="56" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
-        <line num="59" count="0" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
-        <line num="66" count="1" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
         <line num="67" count="0" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
-        <line num="70" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="74" count="0" type="stmt"/>
-        <line num="77" count="1" type="stmt"/>
-        <line num="78" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
         <line num="79" count="0" type="stmt"/>
         <line num="80" count="0" type="stmt"/>
-        <line num="88" count="0" type="stmt"/>
-        <line num="90" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
         <line num="91" count="0" type="stmt"/>
-        <line num="92" count="0" type="stmt"/>
-        <line num="93" count="0" type="stmt"/>
-        <line num="94" count="0" type="stmt"/>
-        <line num="96" count="0" type="stmt"/>
-        <line num="97" count="0" type="stmt"/>
-        <line num="99" count="0" type="stmt"/>
+        <line num="94" count="2" type="stmt"/>
         <line num="101" count="0" type="stmt"/>
-        <line num="105" count="2" type="stmt"/>
-        <line num="124" count="0" type="stmt"/>
-        <line num="138" count="0" type="stmt"/>
-        <line num="149" count="0" type="stmt"/>
-        <line num="160" count="0" type="stmt"/>
-        <line num="164" count="0" type="stmt"/>
-        <line num="190" count="0" type="stmt"/>
-        <line num="200" count="0" type="stmt"/>
+        <line num="117" count="0" type="stmt"/>
+        <line num="131" count="0" type="stmt"/>
+        <line num="142" count="0" type="stmt"/>
+        <line num="153" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="168" count="0" type="stmt"/>
+        <line num="172" count="0" type="stmt"/>
+        <line num="198" count="0" type="stmt"/>
+        <line num="208" count="0" type="stmt"/>
       </file>
       <file name="Postings.jsx" path="/Users/ekanshsinghal/Desktop/CSC510/edu-setu-group26-proj2/code/ui/src/Components/ProfessorDashboard/Postings.jsx">
         <metrics statements="66" coveredstatements="18" conditionals="12" coveredconditionals="0" methods="28" coveredmethods="3"/>
@@ -270,7 +268,7 @@
         <line num="182" count="0" type="stmt"/>
       </file>
       <file name="Shortlisted.jsx" path="/Users/ekanshsinghal/Desktop/CSC510/edu-setu-group26-proj2/code/ui/src/Components/ProfessorDashboard/Shortlisted.jsx">
-        <metrics statements="50" coveredstatements="16" conditionals="8" coveredconditionals="0" methods="25" coveredmethods="3"/>
+        <metrics statements="47" coveredstatements="15" conditionals="6" coveredconditionals="0" methods="24" coveredmethods="3"/>
         <line num="8" count="3" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
@@ -297,30 +295,27 @@
         <line num="73" count="1" type="stmt"/>
         <line num="74" count="0" type="stmt"/>
         <line num="76" count="1" type="stmt"/>
-        <line num="77" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="81" count="0" type="stmt"/>
-        <line num="84" count="1" type="stmt"/>
-        <line num="85" count="0" type="stmt"/>
-        <line num="86" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
         <line num="87" count="0" type="stmt"/>
+        <line num="89" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="92" count="0" type="stmt"/>
+        <line num="93" count="0" type="stmt"/>
         <line num="95" count="0" type="stmt"/>
-        <line num="97" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="96" count="0" type="stmt"/>
         <line num="98" count="0" type="stmt"/>
-        <line num="99" count="0" type="stmt"/>
         <line num="100" count="0" type="stmt"/>
-        <line num="101" count="0" type="stmt"/>
-        <line num="103" count="0" type="stmt"/>
-        <line num="104" count="0" type="stmt"/>
-        <line num="106" count="0" type="stmt"/>
-        <line num="108" count="0" type="stmt"/>
-        <line num="112" count="2" type="stmt"/>
-        <line num="131" count="0" type="stmt"/>
-        <line num="145" count="0" type="stmt"/>
-        <line num="156" count="0" type="stmt"/>
-        <line num="167" count="0" type="stmt"/>
-        <line num="171" count="0" type="stmt"/>
-        <line num="197" count="0" type="stmt"/>
-        <line num="207" count="0" type="stmt"/>
+        <line num="104" count="2" type="stmt"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="137" count="0" type="stmt"/>
+        <line num="148" count="0" type="stmt"/>
+        <line num="159" count="0" type="stmt"/>
+        <line num="163" count="0" type="stmt"/>
+        <line num="189" count="0" type="stmt"/>
+        <line num="199" count="0" type="stmt"/>
       </file>
       <file name="UpdateApplication.jsx" path="/Users/ekanshsinghal/Desktop/CSC510/edu-setu-group26-proj2/code/ui/src/Components/ProfessorDashboard/UpdateApplication.jsx">
         <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>

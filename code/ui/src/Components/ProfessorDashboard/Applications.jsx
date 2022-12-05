@@ -1,16 +1,17 @@
 import React from "react";
 import { Table, message, Modal, Button, Space, Tag, Card } from "antd";
-import config from "../../config";
 import Column from "antd/lib/table/Column";
-import { EditOutlined, ReloadOutlined } from "@ant-design/icons";
+import { EditOutlined, ReloadOutlined, DownloadOutlined } from "@ant-design/icons";
+
 import UpdateApplication from "./UpdateApplication";
+import config from "../../config";
 
 const statusColors = {
 	PENDING: "orange",
 	IN_PROGRESS: "blue",
 	SELECTED: "success",
 	REJECTED: "red",
-	SHORTLISTED:"yellow",
+	SHORTLISTED: "yellow",
 };
 
 export default class Applications extends React.Component {
@@ -26,6 +27,7 @@ export default class Applications extends React.Component {
 		updateVisible: false,
 		applicantsData: {},
 		updateApplicantData: {},
+		resumes: {},
 	};
 
 	onCloseEdit = () => this.setState({ updateVisible: false });
@@ -34,10 +36,11 @@ export default class Applications extends React.Component {
 
 	onClickApplicants = (record) => this.setState({ visible: true, applicantsData: record });
 
-	fetchApplications = () => {
+	fetchApplications = async () => {
 		this.setState({ loading: true });
 		let url = `${config.baseUrl}/get_applications_for_professor`;
-		fetch(url, {
+		let students = new Set();
+		await fetch(url, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -50,6 +53,11 @@ export default class Applications extends React.Component {
 			.then((res) => res.json())
 			.then((response) => {
 				if (response.status) {
+					response.data.map((application) =>
+						application.Applications.map((student) =>
+							students.add(student.student_user_id)
+						)
+					);
 					this.setState({ data: response.data, filteredData: response.data });
 				} else {
 					message.error(response.data, 1);
@@ -57,6 +65,22 @@ export default class Applications extends React.Component {
 				this.setState({ loading: false });
 			})
 			.catch((err) => console.log(err));
+		students = Array.from(students);
+		const urls = await Promise.all(
+			students.map((student) =>
+				fetch(config.baseUrl + "/get_resume", {
+					method: "POST",
+					body: JSON.stringify({ user_id: student }),
+				})
+					.then((res) => res.json())
+					.then((data) => data.resume_url)
+			)
+		);
+		const resumes = {};
+		for (let i = 0; i < students.length; i++) {
+			resumes[students[i]] = urls[i];
+		}
+		this.setState({ resumes });
 	};
 
 	componentDidMount() {
@@ -66,47 +90,16 @@ export default class Applications extends React.Component {
 	onUpdateApplication = (record) =>
 		this.setState({ updateApplicantData: record, updateVisible: true });
 
-	populateUpdateData = () => {
-		if (
-			this.updateFormRef.current.getFieldsValue().application_id !==
-			this.state.updateApplicantData.application_id
-		)
-			this.updateFormRef.current.setFieldsValue(this.state.updateApplicantData);
-	};
-
-	submitUpdateApplication = (finalValues) => {
-		this.setState({ loadingUpdateApplication: true });
-		let url = `${config.baseUrl}/update_application`;
-		fetch(url, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Access-Control-Allow-Origin": "*",
-			},
-			body: JSON.stringify(finalValues),
-		})
-			.then((res) => res.json())
-			.then((response) => {
-				if (response.status) {
-					this.setState({ updateVisible: false });
-					message.success(response.data);
-					this.fetchApplications();
-					this.onClose();
-				} else {
-					message.error(response.data, 3);
-					this.updateFormRef.current?.resetFields();
-				}
-				this.setState({ loadingUpdateApplication: false });
-			})
-			.catch((err) => console.log(err));
-	};
-
 	render() {
 		return (
 			<Card
 				title='Applications'
 				extra={[
-					<Button type='link' icon={<ReloadOutlined />} onClick={this.fetchApplications}>
+					<Button
+						type='link'
+						icon={<ReloadOutlined />}
+						onClick={() => this.fetchApplications}
+					>
 						Refresh
 					</Button>,
 				]}
@@ -121,7 +114,7 @@ export default class Applications extends React.Component {
 					centered={true}
 				>
 					<Table
-						rowKey={(record) => record.user_id}
+						rowKey={(record) => record.student_user_id}
 						bordered
 						size='small'
 						dataSource={this.state.applicantsData.Applications}
@@ -154,6 +147,21 @@ export default class Applications extends React.Component {
 							}}
 						/>
 						<Column
+							title='Resume'
+							key='resume'
+							render={(record) =>
+								this.state.resumes[record.student_user_id] && (
+									<Button
+										href={this.state.resumes[record.student_user_id]}
+										icon={<DownloadOutlined />}
+										type='link'
+									>
+										Download
+									</Button>
+								)
+							}
+						/>
+						<Column
 							title='Actions'
 							key='action'
 							render={(record) => (
@@ -165,7 +173,7 @@ export default class Applications extends React.Component {
 									/>
 								</Space>
 							)}
-						></Column>
+						/>
 					</Table>
 				</Modal>
 				<Modal
