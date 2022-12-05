@@ -14,9 +14,9 @@ onLogin(): This method is used to verify the user and log the user into the appl
 2.	Professor Dashboard: This contains several functionalities specific to professor 
  Markup : * AddNewPosting.js: This is used to create a new job posting. Once the user logs in as professor, he can create a new job posting to which the students can apply. This class is used to render the UI for creating a new job posting
 * Applications.js: This class contains the methods to view, update candidate applications.
- * fetchApplications() – Used to get all the applications by user id
- *	submitUpdateApplication()- called on clicking the submit button. Used to update the application
- *	populateUpdateData() Display the updated information in the form.
+ ** fetchApplications() – Used to get all the applications by user id
+ **	submitUpdateApplication()- called on clicking the submit button. Used to update the application
+ **	populateUpdateData() Display the updated information in the form.
 iv)	Render() – Method containing the HTML code to render the page.
 * Postings.js: This class contains all the job posting posted by a particular user(professor).
 o	fetchPostings() – This method is used to fetch job posting by user_id
