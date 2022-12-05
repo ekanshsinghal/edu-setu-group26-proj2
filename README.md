@@ -1,17 +1,11 @@
-<!-- ![Logo](./assets/Edu_Setu_Logo.gif) -->
+# Edu Setu Application
 
-<p align="center">
-  <img src="./assets/Edu_Setu_Logo.gif" alt="Logo"/>
-</p>
-
-## Discord channel link - [![Discord](https://img.shields.io/discord/1010335378831585310)](https://discord.gg/ANGKkKvmWH)
 
 [![License](https://img.shields.io/github/license/ekanshsinghal/edu-setu-group26-proj2)](https://github.com/ekanshsinghal/edu-setu-group26-proj2/blob/main/LICENSE)
 ![GitHub](https://img.shields.io/badge/Language-JavaScript-blue.svg)
 ![npm](https://img.shields.io/badge/npm-v8.9.0-green.svg)
 ![Node](https://img.shields.io/badge/node-v16.15.1-green.svg)
 ![Python](https://img.shields.io/badge/python-v3.9-green.svg)
-
 ![Open issues](https://img.shields.io/github/issues-raw/ekanshsinghal/edu-setu-group26-proj2)
 ![Closed issues](https://img.shields.io/github/issues-closed-raw/ekanshsinghal/edu-setu-group26-proj2?color=bright-green)
 ![Repo size](https://img.shields.io/github/repo-size/ekanshsinghal/edu-setu-group26-proj2)
@@ -24,23 +18,23 @@
 
 ---
 
-## Link to Edu Setu website
-The website is hosted online in AWS and can be accessed by clicking this [link](http://aws-ecs-demo-load-balancer-1697820439.us-east-1.elb.amazonaws.com/).
+## Check it out!
+The Edu Setu website is hosted online in AWS and can be accessed by clicking this [link](http://aws-ecs-demo-load-balancer-1697820439.us-east-1.elb.amazonaws.com/).
 
----
+<img src="./assets/Edu_Setu_Logo.gif" alt="Logo"/>
 
 ## Table of Contents
 
 -   [About](#about)
 -   [Getting started](#getting-started)
--   [Documentation](#documentation)
--   [Development Specifications](#development-specifications)
+-   [Documentation](https://github.com/ekanshsinghal/edu-setu-group26-proj2/edit/main/README.md#documentation)
+-   [Development Specifications](#development-stack)
     -   [Backend](./code/backend/README.md)
     -   [Frontend](./code/ui/README.md)
 -   [Features Overview](https://www.youtube.com/watch?v=2PfVqtwufgw)
 -   [License](#license)
 -   [Future Scope](#future-scope)
--   [Contributors](#contributors)
+-   [Contributors](https://github.com/ekanshsinghal/edu-setu-group26-proj2/edit/main/README.md#contributors)
 
 ---
 
@@ -148,7 +142,11 @@ Further details regarding the license can be found [here](https://github.com/jay
   <a href="https://app.animaker.com/animo/U8kmFueXtw7EeXdL/"><img src="./assets/video2.png" alt="Click me" width="50%" height="50%"/></a>
 </p>
 
-## Contributors 👨‍🏭
+---
+## Discord channel link - [Click to join](https://discord.gg/HPFQ3Qak))
+
+
+## Contributors
 
 <table>
 
