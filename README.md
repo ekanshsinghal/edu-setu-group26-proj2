@@ -8,7 +8,7 @@
 
 [![License](https://img.shields.io/github/license/jayrajmulani/group1-se-homeworks)](https://github.com/jayrajmulani/group2-se-homeworks/blob/main/LICENSE)
 ![Repo size](https://img.shields.io/github/repo-size/ekanshsinghal/edu-setu-group26-proj2)
-![Lines](https://img.shields.io/tokei/lines/github/ekanshsinghal/edu-setu-group26-proj2)
+![Lines of code](https://img.shields.io/tokei/lines/github.com/ekanshsinghal/edu-setu-group26-proj2)
 [![DOI](https://zenodo.org/badge/527647386.svg)](https://zenodo.org/badge/latestdoi/527647386)
 [![Travis](https://app.travis-ci.com/jayrajmulani/group1-se-homeworks.svg?branch=main)](https://app.travis-ci.com/github/jayrajmulani/group1-se-homeworks/pull_requests)
 [![Contributors](https://img.shields.io/github/contributors/jayrajmulani/edu-setu)](https://github.com/jayrajmulani/edu-setu/graphs/contributors)
