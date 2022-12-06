@@ -149,9 +149,9 @@ npm start
 -   Implemented ECR lifecycle policy to delete all images except the latest two in the cloud repository to avoid unnecessary charges due to storage.
 -   Automated backend testing using GitHub workflow to test each API after every commit.
 
-### Video
+### Demo
 
-A video explaining the newly added features can be found in think [link](https://drive.google.com/file/d/1SAOqbMNJrZS7wzJ1X1OPpqAk_wSBRjD7/view?usp=sharing)
+A video explaining the newly added features can be found in this [link](https://drive.google.com/file/d/1SAOqbMNJrZS7wzJ1X1OPpqAk_wSBRjD7/view?usp=sharing)
 
 ## Documentation
 
