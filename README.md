@@ -196,7 +196,7 @@ A video explaining the newly added features can be found in this [link](https://
 
 The portal is developed with the above mentioned tech-stack. Detailed documentation for each component can be found as below:
 
-1. [Backend](https://github.com/ekanshsinghal/edu-setu-group26-proj2/tree/main/docs/backend)
+1. [Backend](https://ekanshsinghal.github.io/edu-setu-group26-proj2/)
 2. [Frontend](https://github.com/ekanshsinghal/edu-setu-group26-proj2/tree/main/docs/backend)
 
 
