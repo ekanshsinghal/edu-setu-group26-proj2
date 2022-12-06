@@ -28,7 +28,7 @@ jobs:
     - name: Auto Generate Documentation
       run: |
         echo "PYTHONPATH=./code/backend" >> $GITHUB_ENV
-        pdoc --html backend --force --output-dir docs
+        pdoc --html code/backend --force --output-dir docs
         echo "Github reference"
         echo ${{ github.ref }}
         git add .
