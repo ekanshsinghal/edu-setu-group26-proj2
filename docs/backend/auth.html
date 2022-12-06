@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>backend.auth API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>backend.auth</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from utils import *
+import bcrypt
+
+
+def register(data):
+    &#39;&#39;&#39;
+    ```
+    /register [POST]
+    Request:
+    {
+        email : string,
+        password: string,
+        display_name: string,
+        type: string (Professor / Student),
+        phone: string,
+        if type == &#34;Student&#34;:
+            gpa: float,
+            major: string,
+            minor: string,
+            degree: string,
+            year: string
+        elif type == &#34;Professor&#34;:
+            department: string,
+            designation
+    }
+    Response:
+    {
+        status: boolean
+        if status is True:
+            data:{
+                email: string,
+                user_id: number,
+                display_name: string
+                type: string (Professor / Student)
+            }
+        else:
+            data: string (containing an error message)
+    }
+    ```
+    &#39;&#39;&#39;
+
+    try:
+        con = connect()
+    except:
+        return prepare_response(False, &#34;Unable to create DB connection&#34;)
+    try:
+        # Get the data from JSON Payload
+        email = data[&#34;email&#34;].lower()
+        password = bcrypt.hashpw(data[&#34;password&#34;].encode(
+            &#34;utf-8&#34;), bcrypt.gensalt()).decode(&#34;utf-8&#34;)
+        user_type = data[&#34;type&#34;]
+        display_name = data[&#34;display_name&#34;]
+        phone = data[&#34;phone&#34;] if &#34;phone&#34; in data.keys() else None
+
+        # Check if email id is already present.
+        cur = con.cursor()
+        query = &#34;SELECT email FROM USERS WHERE EMAIL = :1&#34;
+        params = [email]
+        res = cur.execute(query, params)
+        rows = res.fetchall()
+        if len(rows):
+            return prepare_response(
+                False, f&#34;User with the Email: {email} already exists.&#34;
+            )
+        # check if the same phone is already present
+        query = &#34;SELECT phone FROM USERS WHERE PHONE = :1&#34;
+        params = [phone]
+        res = cur.execute(query, params)
+        rows = res.fetchall()
+        if len(rows):
+            return prepare_response(
+                False, f&#34;User with Phone: {phone} already exists.&#34;
+            )
+
+        # If it is a new user, insert the details into the database.
+        query = &#34;SELECT USER_ID_SEQ.NEXTVAL FROM DUAL&#34;
+        cur.execute(query)
+        cur.rowfactory = makeDictFactory(cur)
+        user_id = cur.fetchone()[&#39;nextval&#39;]
+
+        query = &#34;INSERT INTO USERS (USER_ID, EMAIL, DISPLAY_NAME, PASSWORD, TYPE, PHONE) VALUES (:1,:2,:3,:4,:5,:6)&#34;
+        params = [user_id, email, display_name, password, user_type, phone]
+        cur.execute(query, params)
+
+        if user_type == &#34;student&#34;:
+            gpa = data[&#34;gpa&#34;] if &#34;gpa&#34; in data.keys() else None
+            major = data[&#34;major&#34;] if &#34;major&#34; in data.keys() else None
+            minor = data[&#34;minor&#34;] if &#34;minor&#34; in data.keys() else None
+            degree = data[&#34;degree&#34;] if &#34;degree&#34; in data.keys() else None
+            year = data[&#34;year&#34;] if &#34;year&#34; in data.keys() else None
+            query = &#34;INSERT INTO STUDENT (USER_ID, DEGREE, YEAR, MAJOR, MINOR, GPA) VALUES (:1,:2,:3,:4,:5,:6)&#34;
+            params = [user_id, degree, year, major, minor, gpa]
+            cur.execute(query, params)
+
+        elif user_type == &#34;professor&#34;:
+            department = data[&#34;department&#34;] if &#34;department&#34; in data.keys(
+            ) else None
+            designation = data[&#34;designation&#34;] if &#34;designation&#34; in data.keys(
+            ) else None
+            query = &#34;INSERT INTO PROFESSORS (USER_ID, DEPARTMENT, DESIGNATION) VALUES (:1,:2,:3)&#34;
+            params = [user_id, department, designation]
+            cur.execute(query, params)
+
+        con.commit()
+        return prepare_response(
+            True,
+            {
+                &#34;email&#34;: email,
+                &#34;user_id&#34;: user_id,
+                &#34;display_name&#34;: display_name,
+                &#34;type&#34;: user_type
+            }
+        )
+    except Exception as e:
+        print(e)
+        return prepare_response(False, str(e))
+    finally:
+        disconnect(con)
+
+
+def login(data):
+    &#39;&#39;&#39;
+    ```
+    /login [POST]
+    Request:
+    {
+        email : string,
+        password: string
+    }
+    Response:
+    {
+        status: boolean,
+
+        if status is True:
+            data:{
+                email: string,
+                user_id: number,
+                display_name: string
+                type: string (Professor / Student)
+            }
+        else:
+            data: string (containing an error message)
+    }
+    ```
+    &#39;&#39;&#39;
+
+    try:
+        con = connect()
+    except:
+        return prepare_response(False, &#34;Unable to create DB connection&#34;)
+    try:
+        # Get the data from JSON Payload
+        email = data[&#34;email&#34;].lower()
+        password = data[&#34;password&#34;]
+
+        # Check if user exists
+        cur = con.cursor()
+        query = &#34;SELECT display_name,email, password, user_id,type FROM USERS WHERE EMAIL = :1&#34;
+        params = [email]
+        cur.execute(query, params)
+        cur.rowfactory = makeDictFactory(cur)
+        row = cur.fetchone()
+        if row is None:
+            return prepare_response(
+                False, f&#34;User with Email {email} doesn&#39;t exist. Please register first.&#34;
+            )
+        valid = bcrypt.checkpw(password.encode(
+            &#34;utf-8&#34;), row[&#34;password&#34;].encode(&#34;utf-8&#34;))
+        if valid:
+            display_name = row[&#34;display_name&#34;]
+            user_id = row[&#34;user_id&#34;]
+            user_type = row[&#34;type&#34;]
+            return prepare_response(
+                True,
+                {
+                    &#34;email&#34;: email,
+                    &#34;user_id&#34;: user_id,
+                    &#34;display_name&#34;: display_name,
+                    &#34;type&#34;: user_type
+                }
+            )
+        else:
+            return prepare_response(False, &#34;Invalid Credentials.&#34;)
+    except Exception as e:
+        print(e)
+        return prepare_response(False, str(e))
+    finally:
+        disconnect(con)
+
+
+def get_user_profile(data):
+    &#39;&#39;&#39;
+    ```
+    /get_user_profile [POST]
+    Request:
+    {
+        user_id: number
+    }
+    Response:
+    {
+        status: boolean,
+        data:
+        {
+            user_id: number,
+            display_name: string,
+            email: string,
+            phone: string,
+            type: string,
+            if type == &#34;Student&#34;:
+                gpa: float,
+                major: string,
+                minor: string,
+                degree: string,
+                year: string
+            elif type == &#34;Professor&#34;:
+                department: string,
+                designation: string
+        }
+    }
+    ```
+    &#39;&#39;&#39;
+
+    try:
+        con = connect()
+    except:
+        return prepare_response(False, &#34;Unable to create DB connection&#34;)
+    try:
+        # Get the data from JSON Payload
+        user_id = data[&#34;user_id&#34;]
+
+        cur = con.cursor()
+        query = &#34;SELECT * FROM USERS WHERE USER_ID = :1&#34;
+        params = [user_id]
+        cur.execute(query, params)
+        cur.rowfactory = makeDictFactory(cur)
+        row = cur.fetchone()
+
+        display_name = row[&#34;display_name&#34;]
+        user_id = row[&#34;user_id&#34;]
+        user_type = row[&#34;type&#34;]
+        email = row[&#34;email&#34;]
+        phone = row[&#34;phone&#34;]
+        data1 = {
+            &#34;email&#34;: email,
+            &#34;user_id&#34;: user_id,
+            &#34;display_name&#34;: display_name,
+            &#34;type&#34;: user_type,
+            &#34;phone&#34;: phone
+        }
+        if user_type == &#34;student&#34;:
+            query = &#34;SELECT * FROM STUDENT WHERE USER_ID = :1&#34;
+            params = [user_id]
+            cur.execute(query, params)
+            cur.rowfactory = makeDictFactory(cur)
+            row = cur.fetchone()
+
+            data1[&#34;gpa&#34;] = row[&#34;gpa&#34;]
+            data1[&#34;major&#34;] = row[&#34;major&#34;]
+            data1[&#34;minor&#34;] = row[&#34;minor&#34;]
+            data1[&#34;degree&#34;] = row[&#34;degree&#34;]
+            data1[&#34;year&#34;] = row[&#34;year&#34;]
+
+        elif user_type == &#34;professor&#34;:
+            query = &#34;SELECT * FROM PROFESSORS WHERE USER_ID = :1&#34;
+            params = [user_id]
+            cur.execute(query, params)
+            cur.rowfactory = makeDictFactory(cur)
+            row = cur.fetchone()
+
+            data1[&#34;department&#34;] = row[&#34;department&#34;]
+            data1[&#34;designation&#34;] = row[&#34;designation&#34;]
+
+        return prepare_response(
+            True, data1
+
+        )
+    except Exception as e:
+        print(e)
+        return prepare_response(False, str(e))
+    finally:
+        disconnect(con)
+
+
+def edit_profile(data):
+    &#39;&#39;&#39;
+    ```
+    /edit_profile
+    Request:
+    {
+        user_id: number,
+        email : string,
+        password: string,
+        display_name: string,
+        type: string (Professor / Student),
+        phone: string,
+        if type == &#34;Student&#34;:
+            gpa: float,
+            major: string,
+            minor: string,
+            degree: string,
+            year: string
+        elif type == &#34;Professor&#34;:
+            department: string,
+            designation
+    }
+    Response:
+    {
+        status: boolean
+        data: (Success / Error message as per status)
+    }
+    ```
+
+    &#39;&#39;&#39;
+    try:
+        con = connect()
+    except:
+        return prepare_response(False, &#34;Unable to create DB connection&#34;)
+    try:
+        # Get the data from JSON Payload
+        email = data[&#34;email&#34;]
+        user_id = data[&#34;user_id&#34;]
+        # password = bcrypt.hashpw(data[&#34;password&#34;].encode(&#34;utf-8&#34;), bcrypt.gensalt()).decode(&#34;utf-8&#34;)
+        user_type = data[&#34;type&#34;]
+        display_name = data[&#34;display_name&#34;]
+        phone = data[&#34;phone&#34;]
+
+        # Check if email id is already present.
+        cur = con.cursor()
+        query = &#34;SELECT * FROM USERS WHERE USER_ID = :1&#34;
+        params = [user_id]
+        cur.execute(query, params)
+        cur.rowfactory = makeDictFactory(cur)
+        rows = cur.fetchone()
+
+        old_email = rows[&#34;email&#34;]
+        old_phone = rows[&#34;phone&#34;]
+
+        if(old_email != email):
+            query = &#34;SELECT email FROM USERS WHERE EMAIL = :1&#34;
+            params = [email]
+            res = cur.execute(query, params)
+            rows = res.fetchall()
+            if len(rows):
+                return prepare_response(
+                    False, f&#34;User with email {email} already exists.&#34;
+                )
+        if(old_phone != phone):
+            # check if the same phone is already present
+            query = &#34;SELECT phone FROM USERS WHERE PHONE = :1&#34;
+            params = [phone]
+            res = cur.execute(query, params)
+            rows = res.fetchall()
+            if len(rows):
+                return prepare_response(
+                    False, f&#34;User with phone {phone} already exists.&#34;
+                )
+        query = &#34;UPDATE USERS SET EMAIL = :1, DISPLAY_NAME = :2, TYPE = :3, PHONE = :4 WHERE USER_ID = :5&#34;
+        params = [email, display_name, user_type, phone, user_id]
+        cur.execute(query, params)
+
+        if user_type == &#34;student&#34;:
+            gpa = data[&#34;gpa&#34;]
+            major = data[&#34;major&#34;]
+            minor = data[&#34;minor&#34;]
+            degree = data[&#34;degree&#34;]
+            year = data[&#34;year&#34;]
+            query = &#34;UPDATE STUDENT SET DEGREE = :1, YEAR = :2, MAJOR = :3, MINOR = :4, GPA = :5 WHERE USER_ID = :6&#34;
+            params = [degree, year, major, minor, gpa, user_id]
+            cur.execute(query, params)
+
+        elif user_type == &#34;professor&#34;:
+            department = data[&#34;department&#34;]
+            designation = data[&#34;designation&#34;]
+            query = &#34;UPDATE PROFESSORS SET DEPARTMENT = :1,DESIGNATION = :2 WHERE USER_ID = :3&#34;
+            params = [department, designation, user_id]
+            cur.execute(query, params)
+
+        con.commit()
+        return prepare_response(
+            True, &#34;Profile Updated Successfully&#34;
+        )
+    except Exception as e:
+        print(e)
+        return prepare_response(False, str(e))
+    finally:
+        disconnect(con)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="backend.auth.edit_profile"><code class="name flex">
+<span>def <span class="ident">edit_profile</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"><pre><code>/edit_profile
+Request:
+{
+    user_id: number,
+    email : string,
+    password: string,
+    display_name: string,
+    type: string (Professor / Student),
+    phone: string,
+    if type == &quot;Student&quot;:
+        gpa: float,
+        major: string,
+        minor: string,
+        degree: string,
+        year: string
+    elif type == &quot;Professor&quot;:
+        department: string,
+        designation
+}
+Response:
+{
+    status: boolean
+    data: (Success / Error message as per status)
+}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def edit_profile(data):
+    &#39;&#39;&#39;
+    ```
+    /edit_profile
+    Request:
+    {
+        user_id: number,
+        email : string,
+        password: string,
+        display_name: string,
+        type: string (Professor / Student),
+        phone: string,
+        if type == &#34;Student&#34;:
+            gpa: float,
+            major: string,
+            minor: string,
+            degree: string,
+            year: string
+        elif type == &#34;Professor&#34;:
+            department: string,
+            designation
+    }
+    Response:
+    {
+        status: boolean
+        data: (Success / Error message as per status)
+    }
+    ```
+
+    &#39;&#39;&#39;
+    try:
+        con = connect()
+    except:
+        return prepare_response(False, &#34;Unable to create DB connection&#34;)
+    try:
+        # Get the data from JSON Payload
+        email = data[&#34;email&#34;]
+        user_id = data[&#34;user_id&#34;]
+        # password = bcrypt.hashpw(data[&#34;password&#34;].encode(&#34;utf-8&#34;), bcrypt.gensalt()).decode(&#34;utf-8&#34;)
+        user_type = data[&#34;type&#34;]
+        display_name = data[&#34;display_name&#34;]
+        phone = data[&#34;phone&#34;]
+
+        # Check if email id is already present.
+        cur = con.cursor()
+        query = &#34;SELECT * FROM USERS WHERE USER_ID = :1&#34;
+        params = [user_id]
+        cur.execute(query, params)
+        cur.rowfactory = makeDictFactory(cur)
+        rows = cur.fetchone()
+
+        old_email = rows[&#34;email&#34;]
+        old_phone = rows[&#34;phone&#34;]
+
+        if(old_email != email):
+            query = &#34;SELECT email FROM USERS WHERE EMAIL = :1&#34;
+            params = [email]
+            res = cur.execute(query, params)
+            rows = res.fetchall()
+            if len(rows):
+                return prepare_response(
+                    False, f&#34;User with email {email} already exists.&#34;
+                )
+        if(old_phone != phone):
+            # check if the same phone is already present
+            query = &#34;SELECT phone FROM USERS WHERE PHONE = :1&#34;
+            params = [phone]
+            res = cur.execute(query, params)
+            rows = res.fetchall()
+            if len(rows):
+                return prepare_response(
+                    False, f&#34;User with phone {phone} already exists.&#34;
+                )
+        query = &#34;UPDATE USERS SET EMAIL = :1, DISPLAY_NAME = :2, TYPE = :3, PHONE = :4 WHERE USER_ID = :5&#34;
+        params = [email, display_name, user_type, phone, user_id]
+        cur.execute(query, params)
+
+        if user_type == &#34;student&#34;:
+            gpa = data[&#34;gpa&#34;]
+            major = data[&#34;major&#34;]
+            minor = data[&#34;minor&#34;]
+            degree = data[&#34;degree&#34;]
+            year = data[&#34;year&#34;]
+            query = &#34;UPDATE STUDENT SET DEGREE = :1, YEAR = :2, MAJOR = :3, MINOR = :4, GPA = :5 WHERE USER_ID = :6&#34;
+            params = [degree, year, major, minor, gpa, user_id]
+            cur.execute(query, params)
+
+        elif user_type == &#34;professor&#34;:
+            department = data[&#34;department&#34;]
+            designation = data[&#34;designation&#34;]
+            query = &#34;UPDATE PROFESSORS SET DEPARTMENT = :1,DESIGNATION = :2 WHERE USER_ID = :3&#34;
+            params = [department, designation, user_id]
+            cur.execute(query, params)
+
+        con.commit()
+        return prepare_response(
+            True, &#34;Profile Updated Successfully&#34;
+        )
+    except Exception as e:
+        print(e)
+        return prepare_response(False, str(e))
+    finally:
+        disconnect(con)</code></pre>
+</details>
+</dd>
+<dt id="backend.auth.get_user_profile"><code class="name flex">
+<span>def <span class="ident">get_user_profile</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"><pre><code>/get_user_profile [POST]
+Request:
+{
+    user_id: number
+}
+Response:
+{
+    status: boolean,
+    data:
+    {
+        user_id: number,
+        display_name: string,
+        email: string,
+        phone: string,
+        type: string,
+        if type == &quot;Student&quot;:
+            gpa: float,
+            major: string,
+            minor: string,
+            degree: string,
+            year: string
+        elif type == &quot;Professor&quot;:
+            department: string,
+            designation: string
+    }
+}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_user_profile(data):
+    &#39;&#39;&#39;
+    ```
+    /get_user_profile [POST]
+    Request:
+    {
+        user_id: number
+    }
+    Response:
+    {
+        status: boolean,
+        data:
+        {
+            user_id: number,
+            display_name: string,
+            email: string,
+            phone: string,
+            type: string,
+            if type == &#34;Student&#34;:
+                gpa: float,
+                major: string,
+                minor: string,
+                degree: string,
+                year: string
+            elif type == &#34;Professor&#34;:
+                department: string,
+                designation: string
+        }
+    }
+    ```
+    &#39;&#39;&#39;
+
+    try:
+        con = connect()
+    except:
+        return prepare_response(False, &#34;Unable to create DB connection&#34;)
+    try:
+        # Get the data from JSON Payload
+        user_id = data[&#34;user_id&#34;]
+
+        cur = con.cursor()
+        query = &#34;SELECT * FROM USERS WHERE USER_ID = :1&#34;
+        params = [user_id]
+        cur.execute(query, params)
+        cur.rowfactory = makeDictFactory(cur)
+        row = cur.fetchone()
+
+        display_name = row[&#34;display_name&#34;]
+        user_id = row[&#34;user_id&#34;]
+        user_type = row[&#34;type&#34;]
+        email = row[&#34;email&#34;]
+        phone = row[&#34;phone&#34;]
+        data1 = {
+            &#34;email&#34;: email,
+            &#34;user_id&#34;: user_id,
+            &#34;display_name&#34;: display_name,
+            &#34;type&#34;: user_type,
+            &#34;phone&#34;: phone
+        }
+        if user_type == &#34;student&#34;:
+            query = &#34;SELECT * FROM STUDENT WHERE USER_ID = :1&#34;
+            params = [user_id]
+            cur.execute(query, params)
+            cur.rowfactory = makeDictFactory(cur)
+            row = cur.fetchone()
+
+            data1[&#34;gpa&#34;] = row[&#34;gpa&#34;]
+            data1[&#34;major&#34;] = row[&#34;major&#34;]
+            data1[&#34;minor&#34;] = row[&#34;minor&#34;]
+            data1[&#34;degree&#34;] = row[&#34;degree&#34;]
+            data1[&#34;year&#34;] = row[&#34;year&#34;]
+
+        elif user_type == &#34;professor&#34;:
+            query = &#34;SELECT * FROM PROFESSORS WHERE USER_ID = :1&#34;
+            params = [user_id]
+            cur.execute(query, params)
+            cur.rowfactory = makeDictFactory(cur)
+            row = cur.fetchone()
+
+            data1[&#34;department&#34;] = row[&#34;department&#34;]
+            data1[&#34;designation&#34;] = row[&#34;designation&#34;]
+
+        return prepare_response(
+            True, data1
+
+        )
+    except Exception as e:
+        print(e)
+        return prepare_response(False, str(e))
+    finally:
+        disconnect(con)</code></pre>
+</details>
+</dd>
+<dt id="backend.auth.login"><code class="name flex">
+<span>def <span class="ident">login</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"><pre><code>/login [POST]
+Request:
+{
+    email : string,
+    password: string
+}
+Response:
+{
+    status: boolean,
+
+    if status is True:
+        data:{
+            email: string,
+            user_id: number,
+            display_name: string
+            type: string (Professor / Student)
+        }
+    else:
+        data: string (containing an error message)
+}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def login(data):
+    &#39;&#39;&#39;
+    ```
+    /login [POST]
+    Request:
+    {
+        email : string,
+        password: string
+    }
+    Response:
+    {
+        status: boolean,
+
+        if status is True:
+            data:{
+                email: string,
+                user_id: number,
+                display_name: string
+                type: string (Professor / Student)
+            }
+        else:
+            data: string (containing an error message)
+    }
+    ```
+    &#39;&#39;&#39;
+
+    try:
+        con = connect()
+    except:
+        return prepare_response(False, &#34;Unable to create DB connection&#34;)
+    try:
+        # Get the data from JSON Payload
+        email = data[&#34;email&#34;].lower()
+        password = data[&#34;password&#34;]
+
+        # Check if user exists
+        cur = con.cursor()
+        query = &#34;SELECT display_name,email, password, user_id,type FROM USERS WHERE EMAIL = :1&#34;
+        params = [email]
+        cur.execute(query, params)
+        cur.rowfactory = makeDictFactory(cur)
+        row = cur.fetchone()
+        if row is None:
+            return prepare_response(
+                False, f&#34;User with Email {email} doesn&#39;t exist. Please register first.&#34;
+            )
+        valid = bcrypt.checkpw(password.encode(
+            &#34;utf-8&#34;), row[&#34;password&#34;].encode(&#34;utf-8&#34;))
+        if valid:
+            display_name = row[&#34;display_name&#34;]
+            user_id = row[&#34;user_id&#34;]
+            user_type = row[&#34;type&#34;]
+            return prepare_response(
+                True,
+                {
+                    &#34;email&#34;: email,
+                    &#34;user_id&#34;: user_id,
+                    &#34;display_name&#34;: display_name,
+                    &#34;type&#34;: user_type
+                }
+            )
+        else:
+            return prepare_response(False, &#34;Invalid Credentials.&#34;)
+    except Exception as e:
+        print(e)
+        return prepare_response(False, str(e))
+    finally:
+        disconnect(con)</code></pre>
+</details>
+</dd>
+<dt id="backend.auth.register"><code class="name flex">
+<span>def <span class="ident">register</span></span>(<span>data)</span>
+</code></dt>
+<dd>
+<div class="desc"><pre><code>/register [POST]
+Request:
+{
+    email : string,
+    password: string,
+    display_name: string,
+    type: string (Professor / Student),
+    phone: string,
+    if type == &quot;Student&quot;:
+        gpa: float,
+        major: string,
+        minor: string,
+        degree: string,
+        year: string
+    elif type == &quot;Professor&quot;:
+        department: string,
+        designation
+}
+Response:
+{
+    status: boolean
+    if status is True:
+        data:{
+            email: string,
+            user_id: number,
+            display_name: string
+            type: string (Professor / Student)
+        }
+    else:
+        data: string (containing an error message)
+}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def register(data):
+    &#39;&#39;&#39;
+    ```
+    /register [POST]
+    Request:
+    {
+        email : string,
+        password: string,
+        display_name: string,
+        type: string (Professor / Student),
+        phone: string,
+        if type == &#34;Student&#34;:
+            gpa: float,
+            major: string,
+            minor: string,
+            degree: string,
+            year: string
+        elif type == &#34;Professor&#34;:
+            department: string,
+            designation
+    }
+    Response:
+    {
+        status: boolean
+        if status is True:
+            data:{
+                email: string,
+                user_id: number,
+                display_name: string
+                type: string (Professor / Student)
+            }
+        else:
+            data: string (containing an error message)
+    }
+    ```
+    &#39;&#39;&#39;
+
+    try:
+        con = connect()
+    except:
+        return prepare_response(False, &#34;Unable to create DB connection&#34;)
+    try:
+        # Get the data from JSON Payload
+        email = data[&#34;email&#34;].lower()
+        password = bcrypt.hashpw(data[&#34;password&#34;].encode(
+            &#34;utf-8&#34;), bcrypt.gensalt()).decode(&#34;utf-8&#34;)
+        user_type = data[&#34;type&#34;]
+        display_name = data[&#34;display_name&#34;]
+        phone = data[&#34;phone&#34;] if &#34;phone&#34; in data.keys() else None
+
+        # Check if email id is already present.
+        cur = con.cursor()
+        query = &#34;SELECT email FROM USERS WHERE EMAIL = :1&#34;
+        params = [email]
+        res = cur.execute(query, params)
+        rows = res.fetchall()
+        if len(rows):
+            return prepare_response(
+                False, f&#34;User with the Email: {email} already exists.&#34;
+            )
+        # check if the same phone is already present
+        query = &#34;SELECT phone FROM USERS WHERE PHONE = :1&#34;
+        params = [phone]
+        res = cur.execute(query, params)
+        rows = res.fetchall()
+        if len(rows):
+            return prepare_response(
+                False, f&#34;User with Phone: {phone} already exists.&#34;
+            )
+
+        # If it is a new user, insert the details into the database.
+        query = &#34;SELECT USER_ID_SEQ.NEXTVAL FROM DUAL&#34;
+        cur.execute(query)
+        cur.rowfactory = makeDictFactory(cur)
+        user_id = cur.fetchone()[&#39;nextval&#39;]
+
+        query = &#34;INSERT INTO USERS (USER_ID, EMAIL, DISPLAY_NAME, PASSWORD, TYPE, PHONE) VALUES (:1,:2,:3,:4,:5,:6)&#34;
+        params = [user_id, email, display_name, password, user_type, phone]
+        cur.execute(query, params)
+
+        if user_type == &#34;student&#34;:
+            gpa = data[&#34;gpa&#34;] if &#34;gpa&#34; in data.keys() else None
+            major = data[&#34;major&#34;] if &#34;major&#34; in data.keys() else None
+            minor = data[&#34;minor&#34;] if &#34;minor&#34; in data.keys() else None
+            degree = data[&#34;degree&#34;] if &#34;degree&#34; in data.keys() else None
+            year = data[&#34;year&#34;] if &#34;year&#34; in data.keys() else None
+            query = &#34;INSERT INTO STUDENT (USER_ID, DEGREE, YEAR, MAJOR, MINOR, GPA) VALUES (:1,:2,:3,:4,:5,:6)&#34;
+            params = [user_id, degree, year, major, minor, gpa]
+            cur.execute(query, params)
+
+        elif user_type == &#34;professor&#34;:
+            department = data[&#34;department&#34;] if &#34;department&#34; in data.keys(
+            ) else None
+            designation = data[&#34;designation&#34;] if &#34;designation&#34; in data.keys(
+            ) else None
+            query = &#34;INSERT INTO PROFESSORS (USER_ID, DEPARTMENT, DESIGNATION) VALUES (:1,:2,:3)&#34;
+            params = [user_id, department, designation]
+            cur.execute(query, params)
+
+        con.commit()
+        return prepare_response(
+            True,
+            {
+                &#34;email&#34;: email,
+                &#34;user_id&#34;: user_id,
+                &#34;display_name&#34;: display_name,
+                &#34;type&#34;: user_type
+            }
+        )
+    except Exception as e:
+        print(e)
+        return prepare_response(False, str(e))
+    finally:
+        disconnect(con)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="backend" href="index.html">backend</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="backend.auth.edit_profile" href="#backend.auth.edit_profile">edit_profile</a></code></li>
+<li><code><a title="backend.auth.get_user_profile" href="#backend.auth.get_user_profile">get_user_profile</a></code></li>
+<li><code><a title="backend.auth.login" href="#backend.auth.login">login</a></code></li>
+<li><code><a title="backend.auth.register" href="#backend.auth.register">register</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
