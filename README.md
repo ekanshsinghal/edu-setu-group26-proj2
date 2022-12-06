@@ -46,7 +46,7 @@ The Edu Setu website is hosted online in AWS and can be accessed by clicking thi
 
 ---
 
-## About
+## Why Edu Setu?
 
 "Setu" literally translates to "Bridge" in Hindi.
 
@@ -149,12 +149,12 @@ npm start
 -   Implemented ECR lifecycle policy to delete all images except the latest two in the cloud repository to avoid unnecessary charges due to storage.
 -   Automated backend testing using GitHub workflow to test each API after every commit.
 
-### Demo
+### Demo Video
 
 A video explaining the newly added features can be found in this [link](https://drive.google.com/file/d/1SAOqbMNJrZS7wzJ1X1OPpqAk_wSBRjD7/view?usp=sharing)
 
 
-### Basic Functionalities Mini Tutorials
+### How to use the application? - Basic Functionalities Mini Tutorials
 
 #### Student Portal
 - Register as a student by providing the required information. Or login if you already created a student profile.
@@ -225,6 +225,8 @@ This project is licensed under [MIT](https://mit-license.org/).
 Further details regarding the license can be found [here](https://github.com/jayrajmulani/group1-se-homeworks/blob/main/LICENSE).
 
 ---
+
+## Why work on our Project?
 
 <a href="https://app.animaker.com/animo/xJq8qgUlHE0MX9wp/"><h2>Why FORK our project</h2></a>
 
