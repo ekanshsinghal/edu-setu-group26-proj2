@@ -58,8 +58,8 @@ And, as you might have guessed, students can come in to apply and connect with t
 
 The portal is developed with the above mentioned tech-stack. Detailed documentation for each component can be found as below:
 
-1. [Backend](./code/backend/README.md)
-2. [Frontend](./code/ui/README.md)
+1. [Backend](https://github.com/ekanshsinghal/edu-setu-group26-proj2/tree/main/docs/backend)
+2. [Frontend](https://github.com/ekanshsinghal/edu-setu-group26-proj2/tree/main/docs/backend)
 
 
 ### How?
