@@ -27,13 +27,13 @@ The Edu Setu website is hosted online in AWS and can be accessed by clicking thi
 
 -   [About](#about)
 -   [Getting started](#getting-started)
--   [Documentation](https://github.com/ekanshsinghal/edu-setu-group26-proj2/edit/main/README.md#documentation)
--   [Development Specifications](#development-stack)
+-   [Tech Stack](#development-stack)
     -   [Backend](./code/backend/README.md)
     -   [Frontend](./code/ui/README.md)
--   [Features Overview](https://www.youtube.com/watch?v=2PfVqtwufgw)
+-   [Existing Features Overview](https://www.youtube.com/watch?v=2PfVqtwufgw)
+-   [New Features and Enhancements](https://github.com/ekanshsinghal/edu-setu-group26-proj2/edit/main/README.md#new-features-and-enhancements)
+-   [Documentation](https://github.com/ekanshsinghal/edu-setu-group26-proj2/edit/main/README.md#documentation)
 -   [License](#license)
--   [Future Scope](#future-scope)
 -   [Contributors](https://github.com/ekanshsinghal/edu-setu-group26-proj2/edit/main/README.md#contributors)
 
 ---
@@ -70,7 +70,7 @@ We have already deployed the backend on Oracle Cloud Infrastructure. So, that in
 
 ---
 
-## Installation
+### Installation
 
 Follow the below steps for installation and local development:
 
@@ -101,6 +101,45 @@ npm start
 
 ---
 
+## New Features and Enhancements
+
+### Frontend improvements
+
+- Removed dependencies from 11 libraries in UI => smaller package size => faster load times
+- Added app level state-management and routing to avoid making same API calls repeatedly or reloading the entire webpage => more responsive user experience
+- API calls have been parallelised instead of sequential => lower first load/render times
+- UI over-hall (unified UI design theme across the student & professor portal)
+- Tables are paginated instead 1 single long table, have better filters 
+- Saved Jobs Functionality
+- Shortlist candidates functionality for professors
+- Upload and view profile picture
+- Upload resume by student and Download by professor
+
+### Backend improvements
+- API for saving a job
+- API for viewing saved jobs for each student
+- API for storing profile pictures
+- API for retrieving profile pictures
+- API for storing resume pdfs
+- API for retrieving resume pdfs
+- Connectivity with Oracle Cloud Buckets to store uploaded files
+- API for professor to be able to reject every applicant except for the selected candidate (essentially closing the job) in one click
+- API for notifying the students via emails regarding any status update in applications
+- Improved security by using GitHub Secret Manager to secure private keys and other required configurations
+- Moved important configuration variables to environment variables and secured them
+
+### Scalability, Infrastructure, Automation, Cloud related improvements
+- Developed an optimal Cloud infrastructure in AWS to host the application
+- Updated to production grade gunicorn server with 10 workers and 5 threads each which scales the application backend 50 times
+- Dockerized the backend server along with configuration required for AWS deployment
+- Elastic Container Repository to host the Docker Containers for backend and frontend
+- Elastic Container Service with two clusters (EC2 + Networking), services with Load Balancers amd Auto-scaling, and tasks to support Continuous Integraion and Continuous Deployment.
+- Attached Load Balancers in the front to distribute the load among the EC2 servers.
+- Applied Autoscaling policy to horizontally scale upto 20x by dynamically creating additional instances based on CPU Utilization with a threshold of 30%.
+- Implemented CI/CD pipeline using GitHub actions workflow to automate the deployment latest changes in the backend and frontend applications to AWS. 
+- Implemented ECR lifecycle policy to delete all images except the latest two in the cloud repository to avoid unnecessary charges due to storage.
+- Automated backend testing using GitHub workflow to test each API after every commit.
+
 ## Documentation
 
 The portal is developed with the above mentioned tech-stack. Detailed documentation for each component can be found as below:
@@ -125,17 +164,7 @@ The portal is developed with the above mentioned tech-stack. Detailed documentat
 This project is licensed under [MIT](https://mit-license.org/).
 
 Further details regarding the license can be found [here](https://github.com/jayrajmulani/group1-se-homeworks/blob/main/LICENSE).
-
-## Future scope
-
--   Provide push notifications to students when there is an update to their current application status and to professors when a student applies for a job posting.
--   Provide interview zoom schedule links right from the portal to the applicants if selected for an interview, also provide a button to students to show if they can attend the meeting on the provided scheduled date or would like to request another date.
--   Include a referral feature that will allow hired candidates to provide a referral to other suitable students for other positions available under the professor they work for.
--   Provide a page to assign weekly shifts for hired students as per their available timeframe.
--   Scale up the project by using cloud storage to store other important features like resumes, cover letters, and internship certificates of students so the professor can make a better decision on who to shortlist for interview.
--   Validate whether an email is an Edu mail (can also validate it for specific college edu mail as only students from that college should be allowed to apply for college specific positions) or not, also provide an OTP mechanism so that only authentic users can register.
--   Provide a feature so that students or professors who have worked together on a project can endorse each other's skills (Like Linkedin).
--   Once logged in maintain the status as logged in for a particular device until the user signs out to provide more convenience to the user.
+---
 
 <a href="https://app.animaker.com/animo/xJq8qgUlHE0MX9wp/"><h2>Why FORK our project</h2></a>
 
