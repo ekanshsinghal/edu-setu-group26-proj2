@@ -201,7 +201,7 @@ The portal is developed with the above mentioned tech-stack. Detailed documentat
 
 ### CI/CD Pipeline
 
-![Screen Shot 2022-12-05 at 6 28 15 PM](https://user-images.githubusercontent.com/30636208/205767992-09886ff3-e83c-4fbd-a2a1-5e506000fafa.png)
+![Screen Shot 2022-12-05 at 6 17 51 PM](https://user-images.githubusercontent.com/30636208/205818435-de0f368e-f6ae-4116-9c78-01ca48ee06cc.png)
 
 ### Architecture
 
