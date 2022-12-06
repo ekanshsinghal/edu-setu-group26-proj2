@@ -18,8 +18,8 @@
 |Issues are being closed|3|https://github.com/ekanshsinghal/edu-setu-group26-proj2/issues?q=is%3Aissue+is%3Aclosed|
 |DOI badge: exists|3|https://github.com/ekanshsinghal/edu-setu-group26-proj2/blob/main/README.md|
 |Docs: doco generated, format not ugly|3|https://github.com/ekanshsinghal/edu-setu-group26-proj2/tree/main/docs|
-|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|0|https://github.com/ekanshsinghal/edu-setu-group26-proj2/tree/main/docs|
-|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|0|https://github.com/ekanshsinghal/edu-setu-group26-proj2/tree/main/docs|
+|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|1|https://github.com/ekanshsinghal/edu-setu-group26-proj2/tree/main/docs|
+|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|1|https://github.com/ekanshsinghal/edu-setu-group26-proj2/tree/main/docs|
 |Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3|https://github.com/ekanshsinghal/edu-setu-group26-proj2#readme
 |Use of version control tools|3|https://github.com/ekanshsinghal/edu-setu-group26-proj2|
 |Test cases exist|3|https://github.com/ekanshsinghal/edu-setu-group26-proj2/tree/main/tests
