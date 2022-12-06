@@ -153,6 +153,8 @@ npm start
 
 A video explaining the newly added features can be found in this [link](https://drive.google.com/file/d/1SAOqbMNJrZS7wzJ1X1OPpqAk_wSBRjD7/view?usp=sharing)
 
+[![Demo Video](http://img.youtube.com/vi/-n5OHN_Oc7I/0.jpg)](http://www.youtube.com/watch?v=-n5OHN_Oc7I "Video Title")
+
 
 ### How to use the application? - Basic Functionalities Mini Tutorials
 
