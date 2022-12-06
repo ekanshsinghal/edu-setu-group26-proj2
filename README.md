@@ -41,7 +41,7 @@ The Edu Setu website is hosted online in AWS and can be accessed by clicking thi
 <a href="https://app.animaker.com/animo/xJq8qgUlHE0MX9wp/"><h2>Intro Video</h2></a>
 
 <p align="center">
-  <a href="https://drive.google.com/file/d/1SAOqbMNJrZS7wzJ1X1OPpqAk_wSBRjD7/view?usp=share_link"><img src="./assets/video1.png" alt="Click me" width="50%" height="50%"/></a>
+  <a href="https://app.animaker.com/animo/xJq8qgUlHE0MX9wp/"><img src="./assets/video1.png" alt="Click me" width="50%" height="50%"/></a>
 </p>
 
 ---
